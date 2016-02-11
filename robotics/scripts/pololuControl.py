@@ -26,7 +26,7 @@ def setup():
     time.sleep(1)
 
     # set servo speed
-    servo.setTarget(1, 6200)
+    servo.setTarget(1, 6190)
     #servo.setTarget(1, 6170)
     cmd_servo = CENTER_VALUE
     # initilize the ROS node
@@ -37,7 +37,7 @@ def setup():
 def callback(data):
     #rospy.loginfo(rospy.get_caller_id() + " Data to servo %f", data.data)
     # operate the servo
-    servo.setTarget(0, CENTER_VALUE-int((data.data)))
+    servo.setTarget(0, CENTER_VALUE+int((data.data)))
     #print "Servo: " + str(int((data.data)))
     #time.sleep(1)
 
@@ -50,7 +50,7 @@ def worker():
         #ir_output = int((servo.getPosition(6)/4+245)*16-17)
         # inverse the measurement
         ir_output_left = int(1.0/servo.getPosition(6)*10e5)
-        ir_output_right = int(1.0/servo.getPosition(7)*10e5)
+        ir_output_right = int(1.0/servo.getPosition(11)*10e5)+990
         ir_output_diff = ir_output_left - ir_output_right
         print "IR: " + str(ir_output_diff)
         pub.publish(ir_output_diff)
