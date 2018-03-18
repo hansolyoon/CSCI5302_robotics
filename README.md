@@ -50,20 +50,20 @@ servo.close
 - Connect your wifi to "Adroidhotspot2184"(hansol's hotspot)<br>
 - Upload your modified file to odroid
 ```
-scp -r /home/user/catkin_ws/src/robotics/scripts/rc.py odroid@192.168.43.11:/home/odroid/catkin_ws/src/robotics/scripts/rc.py<br>
+scp -r /home/user/catkin_ws/src/robotics/scripts/rc.py odroid@192.168.43.11:/home/odroid/catkin_ws/src/robotics/scripts/rc.py
 ```
 - connect to odroid
 ```
-$ssh odroid@192.168.43.11<br>
+$ssh odroid@192.168.43.11
 ```
 - run roscore
 ```
-odroid@192.168.43.11$ roscore (leave this terminal and open one more terminal)<br>
+odroid@192.168.43.11$ roscore (leave this terminal and open one more terminal)
 ```
 - follow step 2, 3, 5 mentioned above 'history'<br>
 ```
-$cd catkin_ws<br>
-$rospack profile<br>
-$catkin_make<br>
+$cd catkin_ws
+$rospack profile
+$catkin_make
 $rosrun robotics rc.py
 ```
