@@ -50,7 +50,7 @@ servo.close
 - Connect your wifi to "Adroidhotspot2184"(hansol's hotspot)<br>
 - Upload your modified file to odroid
 ```
-scp -r /home/user/catkin_ws/src/robotics/scripts/rc.py odroid@192.168.43.11:/home/odroid/catkin_ws/src/robotics/scripts/rc.py
+scp -r /<your folder>/rc.py odroid@192.168.43.11:/home/odroid/catkin_ws/src/robotics/scripts/rc.py
 ```
 - connect to odroid
 ```
