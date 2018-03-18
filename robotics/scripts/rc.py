@@ -15,15 +15,17 @@ cmd_servo = 1500
 servo.setTarget(0,cmd_servo*4)
 time.sleep(1)
 
-cmd_servo = 2000
-servo.setTarget(0,cmd_servo*4)
-time.sleep(1)
-
 cmd_servo = 1000
 servo.setTarget(0,cmd_servo*4)
 time.sleep(1)
 
 cmd_servo = 1500
 servo.setTarget(0,cmd_servo*4)
+
+cnt=1
+while 1:
+    cnt = cnt + 1
+    ir_output = servo.getPosition(6)
+    print "<<%d>>:%d" % (cnt, ir_output/4)
 
 servo.close
