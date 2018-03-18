@@ -2,7 +2,7 @@
 
 ###history (for odroid)
 
-1. Save directory
+1. Save directory <br>
   : ~/catkin_ws/src/robotics
 
 2. update&make package
@@ -19,7 +19,7 @@ $chmod +x rc.py
 $chmod +x maestro.py
 ```
 
-4. setup for maestro.py
+4. setup for maestro.py <br>
   https://github.com/FRC4564/Maestro
   
 5. run rc.py
@@ -27,8 +27,8 @@ $chmod +x maestro.py
 $rosrun robotics rc.py
 ```
 
-6. how to code?
-  https://www.pololu.com/docs/0J40/5.e (channel setting manual)
+6. how to code? <br>
+  https://www.pololu.com/docs/0J40/5.e (channel setting manual)<br>
   https://www.pololu.com/docs/0J40/4.b (serial servo commands manual)
 
 ```
