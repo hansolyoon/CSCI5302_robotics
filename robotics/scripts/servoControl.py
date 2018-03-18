@@ -5,14 +5,15 @@ import time
 
 from std_msgs.msg import String
 CENTER_VALUE = 1500
-EXTREME_LEFT = 1000
-EXTREME_RIGHT = 2000
-
+EXTREME_LEFT = 1050
+EXTREME_RIGHT = 1950
 
 def setup():
     servo = maestro.Controller()
     servo.setSpeed(0, 0)
-    servo.setAccel(0,0)
+    servo.setAccel(0, 0)
+    servo.setRange(0, EXTREME_LEFT, EXTREME_RIGHT)
+    servo.setRange(1, EXTREME_LEFT, EXTREME_RIGHT)
     cmd_servo = CENTER_VALUE    
 
 
