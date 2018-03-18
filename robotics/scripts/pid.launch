@@ -11,9 +11,12 @@
       <param name="min_loop_frequency" value="95.0" />
      </node>
 
-    <node name="servoControl_node" pkg="robotics" type="servoControl.py">
+    <node name="servoControl_node" pkg="robotics" type="scripts/servoControl.py">
     </node>
 
-    <node name="setPoint_node" pkg="robotics" type="setPoint.py">
+    <node name="setPoint_node" pkg="robotics" type="scripts/setPoint.py">
+    </node>
+
+    <node name="getDistance" pkg="robotics" type="scripts/IRsensor.py">
     </node>
 </launch>
