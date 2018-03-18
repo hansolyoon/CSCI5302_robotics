@@ -6,7 +6,7 @@ servo = maestro.Controller()
 
 while 1:
     pub = rospy.Publisher('state', Float64, queue_size=10)
-    rospy.init_node('statePubliser', anonymous=True)
+    rospy.init_node('servoControl_node', anonymous=True)
     ir_output = servo.getPosition(6)
     pub.publish(ir_output)
 

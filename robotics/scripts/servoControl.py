@@ -14,16 +14,16 @@ def setup():
     servo.setAccel(0, 0)
     servo.setRange(0, EXTREME_LEFT, EXTREME_RIGHT)
     servo.setRange(1, EXTREME_LEFT, EXTREME_RIGHT)
-    cmd_servo = CENTER_VALUE    
+    cmd_servo = CENTER_VALUE
 
 
 def callback(data):
     rospy.loginfo(rospy.get_caller_id() + "Data to servo %s", data.data)
     servo.setTarget(0, int(data.data) * 4)
     #time.sleep(1)
-    
+
 def listener():
-    rospy.init_node('controlEffortNode', anonymous = True)
+    rospy.init_node('servoControl_node', anonymous = True)
     rospy.Subscriber("controlEffort", String, callback)
     rospy.spin()
 
