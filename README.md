@@ -1,6 +1,6 @@
 # CSCI5302_robotics
 
-###history (for odroid)
+### history (for odroid)
 
 1. Save directory <br>
   : ~/catkin_ws/src/robotics
