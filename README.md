@@ -40,3 +40,30 @@ servo.close
 ```
 - acc and speed are for changing to react time
 - need to put *time.sleep(1)* to send same command again
+
+---
+
+### How to use
+
+- Download rc.py<br>
+- Modify it<br>
+- Connect your wifi to "Adroidhotspot2184"(hansol's hotspot)<br>
+- Upload your modified file to odroid
+```
+scp -r /home/user/catkin_ws/src/robotics/scripts/rc.py odroid@192.168.43.11:/home/odroid/catkin_ws/src/robotics/scripts/rc.py<br>
+```
+- connect to odroid
+```
+$ssh odroid@192.168.43.11<br>
+```
+- run roscore
+```
+odroid@192.168.43.11$ roscore (leave this terminal and open one more terminal)<br>
+```
+- follow step 2, 3, 5 mentioned above 'history'<br>
+```
+$cd catkin_ws<br>
+$rospack profile<br>
+$catkin_make<br>
+$rosrun robotics rc.py
+```
