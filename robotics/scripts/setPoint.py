@@ -5,7 +5,7 @@ from std_msgs.msg import Float64
 def talker():
     pub = rospy.Publisher('setpoint', Float64, queue_size=10)
     rospy.init_node('setPoint_node', anonymous=True)
-    rate = rospy.Rate(50)# 10hz
+    rate = rospy.Rate(20)# 10hz
     while not rospy.is_shutdown():
         hello = 5648
         rospy.loginfo(hello)

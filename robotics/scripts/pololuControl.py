@@ -25,14 +25,12 @@ def setup():
 
 
 def callback(data):
-    rospy.loginfo(rospy.get_caller_id() + "Data to servo %f", data.data)
+    rospy.loginfo(rospy.get_caller_id() + " Data to servo %f", data.data)
     servo.setTarget(0, CENTER_VALUE+int((data.data)))
     print "Servo: " + str(CENTER_VALUE-int((data.data)))
     #time.sleep(1)
 
-
-if __name__ == '__main__':
-    setup()
+def worker():
     while not rospy.is_shutdown():
         rospy.init_node('pololuControl_node', anonymous = True)
         rospy.Subscriber("control_effort", Float64, callback)
@@ -42,4 +40,11 @@ if __name__ == '__main__':
             pub.publish(ir_output)
         else:
             pub.publish(5648)
-        time.sleep(1/50)
+        time.sleep(1/20)
+
+if __name__ == '__main__':
+    try:
+        setup()
+        worker()
+    except rospy.ROSInterruptException:
+        pass
