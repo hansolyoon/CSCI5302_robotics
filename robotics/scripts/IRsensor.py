@@ -6,11 +6,11 @@ from std_msgs.msg import Float64
 
 servo = maestro.Controller()
 
-while 1:
+while not rospy.is_shutdown():
     pub = rospy.Publisher('state', Float64, queue_size=10)
     rospy.init_node('getDistance_node', anonymous=True)
     ir_output = int((servo.getPosition(6)/4+245)*16-17)
-    if abs(5648 - ir_output) > 100:
+    if abs(5648 - ir_output) > 100
         pub.publish(ir_output)
     else:
         pub.publish(5648)
