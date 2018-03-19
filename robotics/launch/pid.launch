@@ -11,13 +11,10 @@
       <param name="min_loop_frequency" value="100.0" />
      </node>
 
-    <node name="servoControl_node" pkg="robotics" type="servoControl.py" respawn="true" output="screen">
+    <node name="pololuControl_node" pkg="robotics" type="pololuControl.py" respawn="true" output="screen">
     </node>
 
     <node name="setPoint_node" pkg="robotics" type="setPoint.py" respawn="true" output="screen">
-    </node>
-
-    <node name="getDistance_node" pkg="robotics" type="IRsensor.py" respawn="true" output="screen">
     </node>
 
     <node name="rqt_plot" pkg="rqt_plot" type="rqt_plot"
