@@ -23,7 +23,7 @@ def setup():
     servo.setRange(1, EXTREME_LEFT, EXTREME_RIGHT)
     servo.setTarget(1, 6000)
     time.sleep(1)
-    servo.setTarget(1, 6150)
+    servo.setTarget(1, 6170)
     cmd_servo = CENTER_VALUE
     rospy.init_node('pololuControl_node', anonymous = True)
     rospy.Subscriber("control_effort", Float64, callback)
