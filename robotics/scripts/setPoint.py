@@ -8,7 +8,7 @@ def talker():
     rate = rospy.Rate(200)
     while not rospy.is_shutdown():
         hello = 530
-        rospy.loginfo(hello)
+        #rospy.loginfo(hello)
         pub.publish(hello)
         rate.sleep()
 

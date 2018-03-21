@@ -21,18 +21,18 @@ def setup():
     servo.setRange(0, EXTREME_LEFT, EXTREME_RIGHT)
     servo.setTarget(0, CENTER_VALUE)
     servo.setRange(1, EXTREME_LEFT, EXTREME_RIGHT)
-    servo.setTarget(1, 6000)
+    #servo.setTarget(1, 6000)
     time.sleep(1)
-    servo.setTarget(1, 6300)
+    servo.setTarget(1, 6350)
     #servo.setTarget(1, 6170)
     cmd_servo = CENTER_VALUE
     rospy.init_node('pololuControl_node', anonymous = True)
     rospy.Subscriber("control_effort", Float64, callback)
 
 def callback(data):
-    rospy.loginfo(rospy.get_caller_id() + " Data to servo %f", data.data)
+    #rospy.loginfo(rospy.get_caller_id() + " Data to servo %f", data.data)
     servo.setTarget(0, CENTER_VALUE+int((data.data)))
-    print "Servo: " + str(CENTER_VALUE+int((data.data)))
+    #print "Servo: " + str(CENTER_VALUE+int((data.data)))
     #time.sleep(1)
 
 def worker():
@@ -40,7 +40,7 @@ def worker():
     while not rospy.is_shutdown():
         pub2.publish(True)
         #ir_output = int((servo.getPosition(6)/4+245)*16-17)
-        ir_output = int(servo.getPosition(6))
+        ir_output = int(1.0/servo.getPosition(6)*10e5)
         print "IR: " + str(ir_output)
         if abs(530 - ir_output) > 10:
             pub.publish(ir_output)
