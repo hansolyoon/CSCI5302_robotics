@@ -26,9 +26,17 @@ def setup():
     servo.setTarget(1, 6170)
     cmd_servo = CENTER_VALUE
     rospy.init_node('pololuControl_node', anonymous = True)
-    rospy.Subscriber("control_effort", Float64, callback)
+    rospy.Subscriber("control_effort_straight", Float64, callback_straight)
+    rospy.Subscriber("control_effort_corner", Float64, callback_corner)
+    rospy.Subscriber("xtion_depth", Float64, callback)
 
-def callback(data):
+def callback_straight(data):
+    rospy.loginfo(rospy.get_caller_id() + " Data to servo %f", data.data)
+    servo.setTarget(0, CENTER_VALUE+int((data.data)))
+    print "Servo: " + str(CENTER_VALUE-int((data.data)))
+    #time.sleep(1)
+
+def callback_corner(data):
     rospy.loginfo(rospy.get_caller_id() + " Data to servo %f", data.data)
     servo.setTarget(0, CENTER_VALUE+int((data.data)))
     print "Servo: " + str(CENTER_VALUE-int((data.data)))

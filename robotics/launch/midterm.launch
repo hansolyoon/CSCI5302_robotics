@@ -1,5 +1,19 @@
 <launch>
-    <node name="IR_PID" pkg="pid" type="controller" output="screen" respawn="true">
+  <include file="$xtion_depth/launch/xtion_depth.launch"/>
+    <node name="PID_straight" pkg="pid" type="controller" output="screen" respawn="true">
+      <param name="Kp" value="1.0" />
+      <param name="Ki" value="0.0" />
+      <param name="Kd" value="0.1" />
+      <param name="upper_limit" value="700" />
+      <param name="lower_limit" value="-700" />
+      <param name="windup_limit" value="10" />
+      <param name="cutoff_frequency" value="20" />
+      <param name="max_loop_frequency" value="100.0" />
+      <param name="min_loop_frequency" value="100.0" />
+      <remap from="control_effort" to="control_effort_straight">
+    </node>
+
+    <node name="PID_corner" pkg="pid" type="controller" output="screen" respawn="true">
       <param name="Kp" value="4.0" />
       <param name="Ki" value="0.0" />
       <param name="Kd" value="0.1" />
@@ -9,6 +23,7 @@
       <param name="cutoff_frequency" value="20" />
       <param name="max_loop_frequency" value="100.0" />
       <param name="min_loop_frequency" value="100.0" />
+      <remap from="control_effort" to="control_effort_corner">
     </node>
 
 
