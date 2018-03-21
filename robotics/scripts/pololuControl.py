@@ -26,17 +26,19 @@ def setup():
     servo.setTarget(1, 6170)
     cmd_servo = CENTER_VALUE
     rospy.init_node('pololuControl_node', anonymous = True)
-    rospy.Subscriber("control_effort_straight", Float64, callback_straight)
-    rospy.Subscriber("control_effort_corner", Float64, callback_corner)
-    rospy.Subscriber("xtion_depth", Float64, callback)
+    rospy.Subscriber("control_effort_straight", Float64, callback_settarget)
+    rospy.Subscriber("xtion_depth", Float64, callback_bigIR)
 
-def callback_straight(data):
-    rospy.loginfo(rospy.get_caller_id() + " Data to servo %f", data.data)
-    servo.setTarget(0, CENTER_VALUE+int((data.data)))
-    print "Servo: " + str(CENTER_VALUE-int((data.data)))
-    #time.sleep(1)
+def callback_bigIR(data):
+    distance = data.data
+    if distance < 2:
+        rospy.Subscriber("control_effort_corner", Float64, callback_settarget)
+        print "I'm in corner!!! : " + str(data.data)
+    else:
+        rospy.Subscriber("control_effort_straight", Float64, callback_settarget)
+        print "I'm going straight!!! : " + str(data.data)
 
-def callback_corner(data):
+def callback_settarget(data):
     rospy.loginfo(rospy.get_caller_id() + " Data to servo %f", data.data)
     servo.setTarget(0, CENTER_VALUE+int((data.data)))
     print "Servo: " + str(CENTER_VALUE-int((data.data)))
