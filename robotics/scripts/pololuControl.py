@@ -45,6 +45,9 @@ def worker():
         else:
             pub.publish(5648)
         rate.sleep()
+    if rospy.is_shutdown():
+        servo.setTarget(1, 6000)
+
 
 if __name__ == '__main__':
     try:
