@@ -42,10 +42,16 @@ def worker():
         #ir_output = int((servo.getPosition(6)/4+245)*16-17)
         ir_output = int(1.0/servo.getPosition(6)*10e5)
         print "IR: " + str(ir_output)
-        if abs(530 - ir_output) > 10:
+        if abs(1923 - ir_output) > 50 :
             pub.publish(ir_output)
         else:
-            pub.publish(5648)
+            pub.publish(1923)
+
+        if 2900 < ir_output < 3600
+            pub.publish(1850)
+        else:
+            pub.publish(ir_output)
+
         rate.sleep()
     if rospy.is_shutdown():
         servo.setTarget(1, 6000)
