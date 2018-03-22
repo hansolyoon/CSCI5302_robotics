@@ -1,14 +1,14 @@
 <launch>
     <node name="IR_PID" pkg="pid" type="controller" output="screen" respawn="true">
       <param name="Kp" value="10.0" />
-      <param name="Ki" value="5.0" />
+      <param name="Ki" value="0.0" />
       <param name="Kd" value="5.0" />
       <param name="upper_limit" value="1500" />
       <param name="lower_limit" value="-1500" />
       <param name="windup_limit" value="10" />
       <param name="cutoff_frequency" value="20" />
-      <param name="max_loop_frequency" value="100.0" />
-      <param name="min_loop_frequency" value="100.0" />
+      <param name="max_loop_frequency" value="50.0" />
+      <param name="min_loop_frequency" value="50.0" />
     </node>
 
 
@@ -17,8 +17,7 @@
 
 
     <node name="pololuControl_node" pkg="robotics" type="pololuControl.py" respawn="true" output="screen">
-    </node>
-
+  </node>
 
     <!--node name="rqt_plot" pkg="rqt_plot" type="rqt_plot"
     args="/control_effort/data /state/data /setpoint/data" />
