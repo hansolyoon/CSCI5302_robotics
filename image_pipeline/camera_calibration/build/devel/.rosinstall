@@ -1,2 +1,0 @@
-- setup-file:
-    local-name: /home/odroid/catkin_ws/src/image_pipeline/camera_calibration/build/devel/setup.sh

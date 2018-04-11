@@ -1,8 +1,0 @@
-prefix=/home/odroid/catkin_ws/src/image_pipeline/depth_image_proc/build/devel
-
-Name: depth_image_proc
-Description: Description of depth_image_proc
-Version: 1.12.22
-Cflags: -I/home/odroid/catkin_ws/src/image_pipeline/depth_image_proc/include
-Libs: -L/home/odroid/catkin_ws/src/image_pipeline/depth_image_proc/build/devel/lib -ldepth_image_proc
-Requires: 

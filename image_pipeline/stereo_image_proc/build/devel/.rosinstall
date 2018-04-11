@@ -1,2 +1,0 @@
-- setup-file:
-    local-name: /home/odroid/catkin_ws/src/image_pipeline/stereo_image_proc/build/devel/setup.sh

@@ -1,2 +1,0 @@
-- setup-file:
-    local-name: /home/odroid/catkin_ws/src/libuvc_ros/libuvc_camera/devel/setup.sh
