@@ -67,3 +67,6 @@ $rospack profile
 $catkin_make
 $rosrun robotics rc.py
 ```
+
+### ocam setup and run
+Refer to ocam.md
