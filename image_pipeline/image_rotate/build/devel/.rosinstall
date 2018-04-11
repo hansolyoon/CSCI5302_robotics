@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/odroid/catkin_ws/src/image_pipeline/image_rotate/build/devel/setup.sh

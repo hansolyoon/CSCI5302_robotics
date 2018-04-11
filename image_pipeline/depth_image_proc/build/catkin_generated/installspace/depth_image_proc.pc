@@ -1,0 +1,8 @@
+prefix=/usr/local
+
+Name: depth_image_proc
+Description: Description of depth_image_proc
+Version: 1.12.22
+Cflags: -I/usr/local/include
+Libs: -L/usr/local/lib -ldepth_image_proc
+Requires: 
