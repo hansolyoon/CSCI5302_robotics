@@ -1,0 +1,14 @@
+/usr/local/_setup_util.py
+/usr/local/env.sh
+/usr/local/setup.bash
+/usr/local/setup.sh
+/usr/local/setup.zsh
+/usr/local/.rosinstall
+/usr/local/lib/pkgconfig/depth_image_proc.pc
+/usr/local/share/depth_image_proc/cmake/depth_image_procConfig.cmake
+/usr/local/share/depth_image_proc/cmake/depth_image_procConfig-version.cmake
+/usr/local/share/depth_image_proc/package.xml
+/usr/local/include/depth_image_proc/depth_traits.h
+/usr/local/include/depth_image_proc/depth_conversions.h
+/usr/local/lib/libdepth_image_proc.so
+/usr/local/share/depth_image_proc/nodelet_plugins.xml

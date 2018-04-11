@@ -1,0 +1,8 @@
+prefix=/home/odroid/catkin_ws/src/image_pipeline/image_rotate/build/devel
+
+Name: image_rotate
+Description: Description of image_rotate
+Version: 1.12.22
+Cflags: -I/home/odroid/catkin_ws/src/image_pipeline/image_rotate/build/devel/include
+Libs: -L/home/odroid/catkin_ws/src/image_pipeline/image_rotate/build/devel/lib 
+Requires: 
