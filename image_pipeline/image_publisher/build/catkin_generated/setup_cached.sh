@@ -8,8 +8,5 @@
 
 # modified environment variables
 export CMAKE_PREFIX_PATH="/home/odroid/catkin_ws/src/image_pipeline/image_publisher/build/devel:$CMAKE_PREFIX_PATH"
-export LD_LIBRARY_PATH="/home/odroid/catkin_ws/src/image_pipeline/image_publisher/build/devel/lib:$LD_LIBRARY_PATH"
-export PKG_CONFIG_PATH="/home/odroid/catkin_ws/src/image_pipeline/image_publisher/build/devel/lib/pkgconfig:$PKG_CONFIG_PATH"
-export PYTHONPATH="/home/odroid/catkin_ws/src/image_pipeline/image_publisher/build/devel/lib/python2.7/dist-packages:$PYTHONPATH"
 export ROSLISP_PACKAGE_DIRECTORIES="/home/odroid/catkin_ws/src/image_pipeline/image_publisher/build/devel/share/common-lisp:$ROSLISP_PACKAGE_DIRECTORIES"
 export ROS_PACKAGE_PATH="/home/odroid/catkin_ws/src/image_pipeline/image_publisher:$ROS_PACKAGE_PATH"
