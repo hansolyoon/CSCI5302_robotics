@@ -68,5 +68,12 @@ $catkin_make
 $rosrun robotics rc.py
 ```
 
-### ocam setup and run
+### ocam setup and run (4/9)
 Refer to ocam.md
+
+### catkin_make error (4/11)
+1. go to the package folder.
+2. mkdir build;cd build;cmake ..;make;sudo make install;
+
+2. Try to type "rospack profile" in the "/catkin_ws"
+Then try "catkin_make" again.
