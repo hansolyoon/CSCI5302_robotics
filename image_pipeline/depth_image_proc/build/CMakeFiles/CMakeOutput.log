@@ -28,28 +28,28 @@ The CXX compiler identification is GNU, found in "/home/odroid/catkin_ws/src/ima
 Determining if the C compiler works passed with the following output:
 Change Dir: /home/odroid/catkin_ws/src/image_pipeline/depth_image_proc/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_34b26/fast"
-/usr/bin/make -f CMakeFiles/cmTC_34b26.dir/build.make CMakeFiles/cmTC_34b26.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_17aa3/fast"
+/usr/bin/make -f CMakeFiles/cmTC_17aa3.dir/build.make CMakeFiles/cmTC_17aa3.dir/build
 make[1]: Entering directory '/home/odroid/catkin_ws/src/image_pipeline/depth_image_proc/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_34b26.dir/testCCompiler.c.o
-/usr/bin/cc     -o CMakeFiles/cmTC_34b26.dir/testCCompiler.c.o   -c /home/odroid/catkin_ws/src/image_pipeline/depth_image_proc/build/CMakeFiles/CMakeTmp/testCCompiler.c
-Linking C executable cmTC_34b26
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_34b26.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTC_34b26.dir/testCCompiler.c.o  -o cmTC_34b26 -rdynamic 
+Building C object CMakeFiles/cmTC_17aa3.dir/testCCompiler.c.o
+/usr/bin/cc     -o CMakeFiles/cmTC_17aa3.dir/testCCompiler.c.o   -c /home/odroid/catkin_ws/src/image_pipeline/depth_image_proc/build/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_17aa3
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_17aa3.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_17aa3.dir/testCCompiler.c.o  -o cmTC_17aa3 -rdynamic 
 make[1]: Leaving directory '/home/odroid/catkin_ws/src/image_pipeline/depth_image_proc/build/CMakeFiles/CMakeTmp'
 
 
 Detecting C compiler ABI info compiled with the following output:
 Change Dir: /home/odroid/catkin_ws/src/image_pipeline/depth_image_proc/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_5f148/fast"
-/usr/bin/make -f CMakeFiles/cmTC_5f148.dir/build.make CMakeFiles/cmTC_5f148.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_4319f/fast"
+/usr/bin/make -f CMakeFiles/cmTC_4319f.dir/build.make CMakeFiles/cmTC_4319f.dir/build
 make[1]: Entering directory '/home/odroid/catkin_ws/src/image_pipeline/depth_image_proc/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_5f148.dir/CMakeCCompilerABI.c.o
-/usr/bin/cc     -o CMakeFiles/cmTC_5f148.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.5/Modules/CMakeCCompilerABI.c
-Linking C executable cmTC_5f148
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5f148.dir/link.txt --verbose=1
-/usr/bin/cc      -v CMakeFiles/cmTC_5f148.dir/CMakeCCompilerABI.c.o  -o cmTC_5f148 -rdynamic  
+Building C object CMakeFiles/cmTC_4319f.dir/CMakeCCompilerABI.c.o
+/usr/bin/cc     -o CMakeFiles/cmTC_4319f.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.5/Modules/CMakeCCompilerABI.c
+Linking C executable cmTC_4319f
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4319f.dir/link.txt --verbose=1
+/usr/bin/cc      -v CMakeFiles/cmTC_4319f.dir/CMakeCCompilerABI.c.o  -o cmTC_4319f -rdynamic  
 Using built-in specs.
 COLLECT_GCC=/usr/bin/cc
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/arm-linux-gnueabihf/5/lto-wrapper
@@ -59,8 +59,8 @@ Thread model: posix
 gcc version 5.4.0 20160609 (Ubuntu/Linaro 5.4.0-6ubuntu1~16.04.9) 
 COMPILER_PATH=/usr/lib/gcc/arm-linux-gnueabihf/5/:/usr/lib/gcc/arm-linux-gnueabihf/5/:/usr/lib/gcc/arm-linux-gnueabihf/:/usr/lib/gcc/arm-linux-gnueabihf/5/:/usr/lib/gcc/arm-linux-gnueabihf/
 LIBRARY_PATH=/usr/lib/gcc/arm-linux-gnueabihf/5/:/usr/lib/gcc/arm-linux-gnueabihf/5/../../../arm-linux-gnueabihf/:/usr/lib/gcc/arm-linux-gnueabihf/5/../../../../lib/:/lib/arm-linux-gnueabihf/:/lib/../lib/:/usr/lib/arm-linux-gnueabihf/:/usr/lib/../lib/:/usr/lib/gcc/arm-linux-gnueabihf/5/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_5f148' '-rdynamic' '-march=armv7-a' '-mfloat-abi=hard' '-mfpu=vfpv3-d16' '-mthumb' '-mtls-dialect=gnu'
- /usr/lib/gcc/arm-linux-gnueabihf/5/collect2 -plugin /usr/lib/gcc/arm-linux-gnueabihf/5/liblto_plugin.so -plugin-opt=/usr/lib/gcc/arm-linux-gnueabihf/5/lto-wrapper -plugin-opt=-fresolution=/tmp/ccLNRljK.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -export-dynamic -dynamic-linker /lib/ld-linux-armhf.so.3 -X --hash-style=gnu --as-needed -m armelf_linux_eabi -z relro -o cmTC_5f148 /usr/lib/gcc/arm-linux-gnueabihf/5/../../../arm-linux-gnueabihf/crt1.o /usr/lib/gcc/arm-linux-gnueabihf/5/../../../arm-linux-gnueabihf/crti.o /usr/lib/gcc/arm-linux-gnueabihf/5/crtbegin.o -L/usr/lib/gcc/arm-linux-gnueabihf/5 -L/usr/lib/gcc/arm-linux-gnueabihf/5/../../../arm-linux-gnueabihf -L/usr/lib/gcc/arm-linux-gnueabihf/5/../../../../lib -L/lib/arm-linux-gnueabihf -L/lib/../lib -L/usr/lib/arm-linux-gnueabihf -L/usr/lib/../lib -L/usr/lib/gcc/arm-linux-gnueabihf/5/../../.. CMakeFiles/cmTC_5f148.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/arm-linux-gnueabihf/5/crtend.o /usr/lib/gcc/arm-linux-gnueabihf/5/../../../arm-linux-gnueabihf/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_4319f' '-rdynamic' '-march=armv7-a' '-mfloat-abi=hard' '-mfpu=vfpv3-d16' '-mthumb' '-mtls-dialect=gnu'
+ /usr/lib/gcc/arm-linux-gnueabihf/5/collect2 -plugin /usr/lib/gcc/arm-linux-gnueabihf/5/liblto_plugin.so -plugin-opt=/usr/lib/gcc/arm-linux-gnueabihf/5/lto-wrapper -plugin-opt=-fresolution=/tmp/ccBgVNSs.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -export-dynamic -dynamic-linker /lib/ld-linux-armhf.so.3 -X --hash-style=gnu --as-needed -m armelf_linux_eabi -z relro -o cmTC_4319f /usr/lib/gcc/arm-linux-gnueabihf/5/../../../arm-linux-gnueabihf/crt1.o /usr/lib/gcc/arm-linux-gnueabihf/5/../../../arm-linux-gnueabihf/crti.o /usr/lib/gcc/arm-linux-gnueabihf/5/crtbegin.o -L/usr/lib/gcc/arm-linux-gnueabihf/5 -L/usr/lib/gcc/arm-linux-gnueabihf/5/../../../arm-linux-gnueabihf -L/usr/lib/gcc/arm-linux-gnueabihf/5/../../../../lib -L/lib/arm-linux-gnueabihf -L/lib/../lib -L/usr/lib/arm-linux-gnueabihf -L/usr/lib/../lib -L/usr/lib/gcc/arm-linux-gnueabihf/5/../../.. CMakeFiles/cmTC_4319f.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/arm-linux-gnueabihf/5/crtend.o /usr/lib/gcc/arm-linux-gnueabihf/5/../../../arm-linux-gnueabihf/crtn.o
 make[1]: Leaving directory '/home/odroid/catkin_ws/src/image_pipeline/depth_image_proc/build/CMakeFiles/CMakeTmp'
 
 
@@ -68,14 +68,14 @@ Parsed C implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: /home/odroid/catkin_ws/src/image_pipeline/depth_image_proc/build/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_5f148/fast"]
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_5f148.dir/build.make CMakeFiles/cmTC_5f148.dir/build]
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_4319f/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_4319f.dir/build.make CMakeFiles/cmTC_4319f.dir/build]
   ignore line: [make[1]: Entering directory '/home/odroid/catkin_ws/src/image_pipeline/depth_image_proc/build/CMakeFiles/CMakeTmp']
-  ignore line: [Building C object CMakeFiles/cmTC_5f148.dir/CMakeCCompilerABI.c.o]
-  ignore line: [/usr/bin/cc     -o CMakeFiles/cmTC_5f148.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.5/Modules/CMakeCCompilerABI.c]
-  ignore line: [Linking C executable cmTC_5f148]
-  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5f148.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/cc      -v CMakeFiles/cmTC_5f148.dir/CMakeCCompilerABI.c.o  -o cmTC_5f148 -rdynamic  ]
+  ignore line: [Building C object CMakeFiles/cmTC_4319f.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/usr/bin/cc     -o CMakeFiles/cmTC_4319f.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.5/Modules/CMakeCCompilerABI.c]
+  ignore line: [Linking C executable cmTC_4319f]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4319f.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/cc      -v CMakeFiles/cmTC_4319f.dir/CMakeCCompilerABI.c.o  -o cmTC_4319f -rdynamic  ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/cc]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/arm-linux-gnueabihf/5/lto-wrapper]
@@ -85,13 +85,13 @@ Parsed C implicit link information from above output:
   ignore line: [gcc version 5.4.0 20160609 (Ubuntu/Linaro 5.4.0-6ubuntu1~16.04.9) ]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/arm-linux-gnueabihf/5/:/usr/lib/gcc/arm-linux-gnueabihf/5/:/usr/lib/gcc/arm-linux-gnueabihf/:/usr/lib/gcc/arm-linux-gnueabihf/5/:/usr/lib/gcc/arm-linux-gnueabihf/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/arm-linux-gnueabihf/5/:/usr/lib/gcc/arm-linux-gnueabihf/5/../../../arm-linux-gnueabihf/:/usr/lib/gcc/arm-linux-gnueabihf/5/../../../../lib/:/lib/arm-linux-gnueabihf/:/lib/../lib/:/usr/lib/arm-linux-gnueabihf/:/usr/lib/../lib/:/usr/lib/gcc/arm-linux-gnueabihf/5/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_5f148' '-rdynamic' '-march=armv7-a' '-mfloat-abi=hard' '-mfpu=vfpv3-d16' '-mthumb' '-mtls-dialect=gnu']
-  link line: [ /usr/lib/gcc/arm-linux-gnueabihf/5/collect2 -plugin /usr/lib/gcc/arm-linux-gnueabihf/5/liblto_plugin.so -plugin-opt=/usr/lib/gcc/arm-linux-gnueabihf/5/lto-wrapper -plugin-opt=-fresolution=/tmp/ccLNRljK.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -export-dynamic -dynamic-linker /lib/ld-linux-armhf.so.3 -X --hash-style=gnu --as-needed -m armelf_linux_eabi -z relro -o cmTC_5f148 /usr/lib/gcc/arm-linux-gnueabihf/5/../../../arm-linux-gnueabihf/crt1.o /usr/lib/gcc/arm-linux-gnueabihf/5/../../../arm-linux-gnueabihf/crti.o /usr/lib/gcc/arm-linux-gnueabihf/5/crtbegin.o -L/usr/lib/gcc/arm-linux-gnueabihf/5 -L/usr/lib/gcc/arm-linux-gnueabihf/5/../../../arm-linux-gnueabihf -L/usr/lib/gcc/arm-linux-gnueabihf/5/../../../../lib -L/lib/arm-linux-gnueabihf -L/lib/../lib -L/usr/lib/arm-linux-gnueabihf -L/usr/lib/../lib -L/usr/lib/gcc/arm-linux-gnueabihf/5/../../.. CMakeFiles/cmTC_5f148.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/arm-linux-gnueabihf/5/crtend.o /usr/lib/gcc/arm-linux-gnueabihf/5/../../../arm-linux-gnueabihf/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_4319f' '-rdynamic' '-march=armv7-a' '-mfloat-abi=hard' '-mfpu=vfpv3-d16' '-mthumb' '-mtls-dialect=gnu']
+  link line: [ /usr/lib/gcc/arm-linux-gnueabihf/5/collect2 -plugin /usr/lib/gcc/arm-linux-gnueabihf/5/liblto_plugin.so -plugin-opt=/usr/lib/gcc/arm-linux-gnueabihf/5/lto-wrapper -plugin-opt=-fresolution=/tmp/ccBgVNSs.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -export-dynamic -dynamic-linker /lib/ld-linux-armhf.so.3 -X --hash-style=gnu --as-needed -m armelf_linux_eabi -z relro -o cmTC_4319f /usr/lib/gcc/arm-linux-gnueabihf/5/../../../arm-linux-gnueabihf/crt1.o /usr/lib/gcc/arm-linux-gnueabihf/5/../../../arm-linux-gnueabihf/crti.o /usr/lib/gcc/arm-linux-gnueabihf/5/crtbegin.o -L/usr/lib/gcc/arm-linux-gnueabihf/5 -L/usr/lib/gcc/arm-linux-gnueabihf/5/../../../arm-linux-gnueabihf -L/usr/lib/gcc/arm-linux-gnueabihf/5/../../../../lib -L/lib/arm-linux-gnueabihf -L/lib/../lib -L/usr/lib/arm-linux-gnueabihf -L/usr/lib/../lib -L/usr/lib/gcc/arm-linux-gnueabihf/5/../../.. CMakeFiles/cmTC_4319f.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/arm-linux-gnueabihf/5/crtend.o /usr/lib/gcc/arm-linux-gnueabihf/5/../../../arm-linux-gnueabihf/crtn.o]
     arg [/usr/lib/gcc/arm-linux-gnueabihf/5/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/usr/lib/gcc/arm-linux-gnueabihf/5/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/lib/gcc/arm-linux-gnueabihf/5/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/ccLNRljK.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccBgVNSs.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -110,7 +110,7 @@ Parsed C implicit link information from above output:
     arg [armelf_linux_eabi] ==> ignore
     arg [-zrelro] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_5f148] ==> ignore
+    arg [cmTC_4319f] ==> ignore
     arg [/usr/lib/gcc/arm-linux-gnueabihf/5/../../../arm-linux-gnueabihf/crt1.o] ==> ignore
     arg [/usr/lib/gcc/arm-linux-gnueabihf/5/../../../arm-linux-gnueabihf/crti.o] ==> ignore
     arg [/usr/lib/gcc/arm-linux-gnueabihf/5/crtbegin.o] ==> ignore
@@ -122,7 +122,7 @@ Parsed C implicit link information from above output:
     arg [-L/usr/lib/arm-linux-gnueabihf] ==> dir [/usr/lib/arm-linux-gnueabihf]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/arm-linux-gnueabihf/5/../../..] ==> dir [/usr/lib/gcc/arm-linux-gnueabihf/5/../../..]
-    arg [CMakeFiles/cmTC_5f148.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [CMakeFiles/cmTC_4319f.dir/CMakeCCompilerABI.c.o] ==> ignore
     arg [-lgcc] ==> lib [gcc]
     arg [--as-needed] ==> ignore
     arg [-lgcc_s] ==> lib [gcc_s]
@@ -156,14 +156,14 @@ Parsed C implicit link information from above output:
 Detecting C [-std=c11] compiler features compiled with the following output:
 Change Dir: /home/odroid/catkin_ws/src/image_pipeline/depth_image_proc/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_8d171/fast"
-/usr/bin/make -f CMakeFiles/cmTC_8d171.dir/build.make CMakeFiles/cmTC_8d171.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_29182/fast"
+/usr/bin/make -f CMakeFiles/cmTC_29182.dir/build.make CMakeFiles/cmTC_29182.dir/build
 make[1]: Entering directory '/home/odroid/catkin_ws/src/image_pipeline/depth_image_proc/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_8d171.dir/feature_tests.c.o
-/usr/bin/cc    -std=c11 -o CMakeFiles/cmTC_8d171.dir/feature_tests.c.o   -c /home/odroid/catkin_ws/src/image_pipeline/depth_image_proc/build/CMakeFiles/feature_tests.c
-Linking C executable cmTC_8d171
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8d171.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTC_8d171.dir/feature_tests.c.o  -o cmTC_8d171 -rdynamic 
+Building C object CMakeFiles/cmTC_29182.dir/feature_tests.c.o
+/usr/bin/cc    -std=c11 -o CMakeFiles/cmTC_29182.dir/feature_tests.c.o   -c /home/odroid/catkin_ws/src/image_pipeline/depth_image_proc/build/CMakeFiles/feature_tests.c
+Linking C executable cmTC_29182
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_29182.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_29182.dir/feature_tests.c.o  -o cmTC_29182 -rdynamic 
 make[1]: Leaving directory '/home/odroid/catkin_ws/src/image_pipeline/depth_image_proc/build/CMakeFiles/CMakeTmp'
 
 
@@ -176,14 +176,14 @@ make[1]: Leaving directory '/home/odroid/catkin_ws/src/image_pipeline/depth_imag
 Detecting C [-std=c99] compiler features compiled with the following output:
 Change Dir: /home/odroid/catkin_ws/src/image_pipeline/depth_image_proc/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_4bf16/fast"
-/usr/bin/make -f CMakeFiles/cmTC_4bf16.dir/build.make CMakeFiles/cmTC_4bf16.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_98fec/fast"
+/usr/bin/make -f CMakeFiles/cmTC_98fec.dir/build.make CMakeFiles/cmTC_98fec.dir/build
 make[1]: Entering directory '/home/odroid/catkin_ws/src/image_pipeline/depth_image_proc/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_4bf16.dir/feature_tests.c.o
-/usr/bin/cc    -std=c99 -o CMakeFiles/cmTC_4bf16.dir/feature_tests.c.o   -c /home/odroid/catkin_ws/src/image_pipeline/depth_image_proc/build/CMakeFiles/feature_tests.c
-Linking C executable cmTC_4bf16
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4bf16.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTC_4bf16.dir/feature_tests.c.o  -o cmTC_4bf16 -rdynamic 
+Building C object CMakeFiles/cmTC_98fec.dir/feature_tests.c.o
+/usr/bin/cc    -std=c99 -o CMakeFiles/cmTC_98fec.dir/feature_tests.c.o   -c /home/odroid/catkin_ws/src/image_pipeline/depth_image_proc/build/CMakeFiles/feature_tests.c
+Linking C executable cmTC_98fec
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_98fec.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_98fec.dir/feature_tests.c.o  -o cmTC_98fec -rdynamic 
 make[1]: Leaving directory '/home/odroid/catkin_ws/src/image_pipeline/depth_image_proc/build/CMakeFiles/CMakeTmp'
 
 
@@ -196,14 +196,14 @@ make[1]: Leaving directory '/home/odroid/catkin_ws/src/image_pipeline/depth_imag
 Detecting C [-std=c90] compiler features compiled with the following output:
 Change Dir: /home/odroid/catkin_ws/src/image_pipeline/depth_image_proc/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_330bd/fast"
-/usr/bin/make -f CMakeFiles/cmTC_330bd.dir/build.make CMakeFiles/cmTC_330bd.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_e79e1/fast"
+/usr/bin/make -f CMakeFiles/cmTC_e79e1.dir/build.make CMakeFiles/cmTC_e79e1.dir/build
 make[1]: Entering directory '/home/odroid/catkin_ws/src/image_pipeline/depth_image_proc/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_330bd.dir/feature_tests.c.o
-/usr/bin/cc    -std=c90 -o CMakeFiles/cmTC_330bd.dir/feature_tests.c.o   -c /home/odroid/catkin_ws/src/image_pipeline/depth_image_proc/build/CMakeFiles/feature_tests.c
-Linking C executable cmTC_330bd
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_330bd.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTC_330bd.dir/feature_tests.c.o  -o cmTC_330bd -rdynamic 
+Building C object CMakeFiles/cmTC_e79e1.dir/feature_tests.c.o
+/usr/bin/cc    -std=c90 -o CMakeFiles/cmTC_e79e1.dir/feature_tests.c.o   -c /home/odroid/catkin_ws/src/image_pipeline/depth_image_proc/build/CMakeFiles/feature_tests.c
+Linking C executable cmTC_e79e1
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e79e1.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_e79e1.dir/feature_tests.c.o  -o cmTC_e79e1 -rdynamic 
 make[1]: Leaving directory '/home/odroid/catkin_ws/src/image_pipeline/depth_image_proc/build/CMakeFiles/CMakeTmp'
 
 
@@ -214,28 +214,28 @@ make[1]: Leaving directory '/home/odroid/catkin_ws/src/image_pipeline/depth_imag
 Determining if the CXX compiler works passed with the following output:
 Change Dir: /home/odroid/catkin_ws/src/image_pipeline/depth_image_proc/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_13959/fast"
-/usr/bin/make -f CMakeFiles/cmTC_13959.dir/build.make CMakeFiles/cmTC_13959.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_8cbfc/fast"
+/usr/bin/make -f CMakeFiles/cmTC_8cbfc.dir/build.make CMakeFiles/cmTC_8cbfc.dir/build
 make[1]: Entering directory '/home/odroid/catkin_ws/src/image_pipeline/depth_image_proc/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_13959.dir/testCXXCompiler.cxx.o
-/usr/bin/c++      -o CMakeFiles/cmTC_13959.dir/testCXXCompiler.cxx.o -c /home/odroid/catkin_ws/src/image_pipeline/depth_image_proc/build/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
-Linking CXX executable cmTC_13959
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_13959.dir/link.txt --verbose=1
-/usr/bin/c++        CMakeFiles/cmTC_13959.dir/testCXXCompiler.cxx.o  -o cmTC_13959 -rdynamic 
+Building CXX object CMakeFiles/cmTC_8cbfc.dir/testCXXCompiler.cxx.o
+/usr/bin/c++      -o CMakeFiles/cmTC_8cbfc.dir/testCXXCompiler.cxx.o -c /home/odroid/catkin_ws/src/image_pipeline/depth_image_proc/build/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTC_8cbfc
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8cbfc.dir/link.txt --verbose=1
+/usr/bin/c++        CMakeFiles/cmTC_8cbfc.dir/testCXXCompiler.cxx.o  -o cmTC_8cbfc -rdynamic 
 make[1]: Leaving directory '/home/odroid/catkin_ws/src/image_pipeline/depth_image_proc/build/CMakeFiles/CMakeTmp'
 
 
 Detecting CXX compiler ABI info compiled with the following output:
 Change Dir: /home/odroid/catkin_ws/src/image_pipeline/depth_image_proc/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_31226/fast"
-/usr/bin/make -f CMakeFiles/cmTC_31226.dir/build.make CMakeFiles/cmTC_31226.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_0c717/fast"
+/usr/bin/make -f CMakeFiles/cmTC_0c717.dir/build.make CMakeFiles/cmTC_0c717.dir/build
 make[1]: Entering directory '/home/odroid/catkin_ws/src/image_pipeline/depth_image_proc/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_31226.dir/CMakeCXXCompilerABI.cpp.o
-/usr/bin/c++      -o CMakeFiles/cmTC_31226.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.5/Modules/CMakeCXXCompilerABI.cpp
-Linking CXX executable cmTC_31226
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_31226.dir/link.txt --verbose=1
-/usr/bin/c++       -v CMakeFiles/cmTC_31226.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_31226 -rdynamic  
+Building CXX object CMakeFiles/cmTC_0c717.dir/CMakeCXXCompilerABI.cpp.o
+/usr/bin/c++      -o CMakeFiles/cmTC_0c717.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.5/Modules/CMakeCXXCompilerABI.cpp
+Linking CXX executable cmTC_0c717
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0c717.dir/link.txt --verbose=1
+/usr/bin/c++       -v CMakeFiles/cmTC_0c717.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_0c717 -rdynamic  
 Using built-in specs.
 COLLECT_GCC=/usr/bin/c++
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/arm-linux-gnueabihf/5/lto-wrapper
@@ -245,8 +245,8 @@ Thread model: posix
 gcc version 5.4.0 20160609 (Ubuntu/Linaro 5.4.0-6ubuntu1~16.04.9) 
 COMPILER_PATH=/usr/lib/gcc/arm-linux-gnueabihf/5/:/usr/lib/gcc/arm-linux-gnueabihf/5/:/usr/lib/gcc/arm-linux-gnueabihf/:/usr/lib/gcc/arm-linux-gnueabihf/5/:/usr/lib/gcc/arm-linux-gnueabihf/
 LIBRARY_PATH=/usr/lib/gcc/arm-linux-gnueabihf/5/:/usr/lib/gcc/arm-linux-gnueabihf/5/../../../arm-linux-gnueabihf/:/usr/lib/gcc/arm-linux-gnueabihf/5/../../../../lib/:/lib/arm-linux-gnueabihf/:/lib/../lib/:/usr/lib/arm-linux-gnueabihf/:/usr/lib/../lib/:/usr/lib/gcc/arm-linux-gnueabihf/5/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_31226' '-rdynamic' '-shared-libgcc' '-march=armv7-a' '-mfloat-abi=hard' '-mfpu=vfpv3-d16' '-mthumb' '-mtls-dialect=gnu'
- /usr/lib/gcc/arm-linux-gnueabihf/5/collect2 -plugin /usr/lib/gcc/arm-linux-gnueabihf/5/liblto_plugin.so -plugin-opt=/usr/lib/gcc/arm-linux-gnueabihf/5/lto-wrapper -plugin-opt=-fresolution=/tmp/ccLvZCJr.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -export-dynamic -dynamic-linker /lib/ld-linux-armhf.so.3 -X --hash-style=gnu --as-needed -m armelf_linux_eabi -z relro -o cmTC_31226 /usr/lib/gcc/arm-linux-gnueabihf/5/../../../arm-linux-gnueabihf/crt1.o /usr/lib/gcc/arm-linux-gnueabihf/5/../../../arm-linux-gnueabihf/crti.o /usr/lib/gcc/arm-linux-gnueabihf/5/crtbegin.o -L/usr/lib/gcc/arm-linux-gnueabihf/5 -L/usr/lib/gcc/arm-linux-gnueabihf/5/../../../arm-linux-gnueabihf -L/usr/lib/gcc/arm-linux-gnueabihf/5/../../../../lib -L/lib/arm-linux-gnueabihf -L/lib/../lib -L/usr/lib/arm-linux-gnueabihf -L/usr/lib/../lib -L/usr/lib/gcc/arm-linux-gnueabihf/5/../../.. CMakeFiles/cmTC_31226.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/arm-linux-gnueabihf/5/crtend.o /usr/lib/gcc/arm-linux-gnueabihf/5/../../../arm-linux-gnueabihf/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_0c717' '-rdynamic' '-shared-libgcc' '-march=armv7-a' '-mfloat-abi=hard' '-mfpu=vfpv3-d16' '-mthumb' '-mtls-dialect=gnu'
+ /usr/lib/gcc/arm-linux-gnueabihf/5/collect2 -plugin /usr/lib/gcc/arm-linux-gnueabihf/5/liblto_plugin.so -plugin-opt=/usr/lib/gcc/arm-linux-gnueabihf/5/lto-wrapper -plugin-opt=-fresolution=/tmp/ccPyiVvh.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -export-dynamic -dynamic-linker /lib/ld-linux-armhf.so.3 -X --hash-style=gnu --as-needed -m armelf_linux_eabi -z relro -o cmTC_0c717 /usr/lib/gcc/arm-linux-gnueabihf/5/../../../arm-linux-gnueabihf/crt1.o /usr/lib/gcc/arm-linux-gnueabihf/5/../../../arm-linux-gnueabihf/crti.o /usr/lib/gcc/arm-linux-gnueabihf/5/crtbegin.o -L/usr/lib/gcc/arm-linux-gnueabihf/5 -L/usr/lib/gcc/arm-linux-gnueabihf/5/../../../arm-linux-gnueabihf -L/usr/lib/gcc/arm-linux-gnueabihf/5/../../../../lib -L/lib/arm-linux-gnueabihf -L/lib/../lib -L/usr/lib/arm-linux-gnueabihf -L/usr/lib/../lib -L/usr/lib/gcc/arm-linux-gnueabihf/5/../../.. CMakeFiles/cmTC_0c717.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/arm-linux-gnueabihf/5/crtend.o /usr/lib/gcc/arm-linux-gnueabihf/5/../../../arm-linux-gnueabihf/crtn.o
 make[1]: Leaving directory '/home/odroid/catkin_ws/src/image_pipeline/depth_image_proc/build/CMakeFiles/CMakeTmp'
 
 
@@ -254,14 +254,14 @@ Parsed CXX implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: /home/odroid/catkin_ws/src/image_pipeline/depth_image_proc/build/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_31226/fast"]
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_31226.dir/build.make CMakeFiles/cmTC_31226.dir/build]
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_0c717/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_0c717.dir/build.make CMakeFiles/cmTC_0c717.dir/build]
   ignore line: [make[1]: Entering directory '/home/odroid/catkin_ws/src/image_pipeline/depth_image_proc/build/CMakeFiles/CMakeTmp']
-  ignore line: [Building CXX object CMakeFiles/cmTC_31226.dir/CMakeCXXCompilerABI.cpp.o]
-  ignore line: [/usr/bin/c++      -o CMakeFiles/cmTC_31226.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.5/Modules/CMakeCXXCompilerABI.cpp]
-  ignore line: [Linking CXX executable cmTC_31226]
-  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_31226.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/c++       -v CMakeFiles/cmTC_31226.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_31226 -rdynamic  ]
+  ignore line: [Building CXX object CMakeFiles/cmTC_0c717.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/usr/bin/c++      -o CMakeFiles/cmTC_0c717.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.5/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Linking CXX executable cmTC_0c717]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0c717.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/c++       -v CMakeFiles/cmTC_0c717.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_0c717 -rdynamic  ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/c++]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/arm-linux-gnueabihf/5/lto-wrapper]
@@ -271,13 +271,13 @@ Parsed CXX implicit link information from above output:
   ignore line: [gcc version 5.4.0 20160609 (Ubuntu/Linaro 5.4.0-6ubuntu1~16.04.9) ]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/arm-linux-gnueabihf/5/:/usr/lib/gcc/arm-linux-gnueabihf/5/:/usr/lib/gcc/arm-linux-gnueabihf/:/usr/lib/gcc/arm-linux-gnueabihf/5/:/usr/lib/gcc/arm-linux-gnueabihf/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/arm-linux-gnueabihf/5/:/usr/lib/gcc/arm-linux-gnueabihf/5/../../../arm-linux-gnueabihf/:/usr/lib/gcc/arm-linux-gnueabihf/5/../../../../lib/:/lib/arm-linux-gnueabihf/:/lib/../lib/:/usr/lib/arm-linux-gnueabihf/:/usr/lib/../lib/:/usr/lib/gcc/arm-linux-gnueabihf/5/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_31226' '-rdynamic' '-shared-libgcc' '-march=armv7-a' '-mfloat-abi=hard' '-mfpu=vfpv3-d16' '-mthumb' '-mtls-dialect=gnu']
-  link line: [ /usr/lib/gcc/arm-linux-gnueabihf/5/collect2 -plugin /usr/lib/gcc/arm-linux-gnueabihf/5/liblto_plugin.so -plugin-opt=/usr/lib/gcc/arm-linux-gnueabihf/5/lto-wrapper -plugin-opt=-fresolution=/tmp/ccLvZCJr.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -export-dynamic -dynamic-linker /lib/ld-linux-armhf.so.3 -X --hash-style=gnu --as-needed -m armelf_linux_eabi -z relro -o cmTC_31226 /usr/lib/gcc/arm-linux-gnueabihf/5/../../../arm-linux-gnueabihf/crt1.o /usr/lib/gcc/arm-linux-gnueabihf/5/../../../arm-linux-gnueabihf/crti.o /usr/lib/gcc/arm-linux-gnueabihf/5/crtbegin.o -L/usr/lib/gcc/arm-linux-gnueabihf/5 -L/usr/lib/gcc/arm-linux-gnueabihf/5/../../../arm-linux-gnueabihf -L/usr/lib/gcc/arm-linux-gnueabihf/5/../../../../lib -L/lib/arm-linux-gnueabihf -L/lib/../lib -L/usr/lib/arm-linux-gnueabihf -L/usr/lib/../lib -L/usr/lib/gcc/arm-linux-gnueabihf/5/../../.. CMakeFiles/cmTC_31226.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/arm-linux-gnueabihf/5/crtend.o /usr/lib/gcc/arm-linux-gnueabihf/5/../../../arm-linux-gnueabihf/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_0c717' '-rdynamic' '-shared-libgcc' '-march=armv7-a' '-mfloat-abi=hard' '-mfpu=vfpv3-d16' '-mthumb' '-mtls-dialect=gnu']
+  link line: [ /usr/lib/gcc/arm-linux-gnueabihf/5/collect2 -plugin /usr/lib/gcc/arm-linux-gnueabihf/5/liblto_plugin.so -plugin-opt=/usr/lib/gcc/arm-linux-gnueabihf/5/lto-wrapper -plugin-opt=-fresolution=/tmp/ccPyiVvh.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -export-dynamic -dynamic-linker /lib/ld-linux-armhf.so.3 -X --hash-style=gnu --as-needed -m armelf_linux_eabi -z relro -o cmTC_0c717 /usr/lib/gcc/arm-linux-gnueabihf/5/../../../arm-linux-gnueabihf/crt1.o /usr/lib/gcc/arm-linux-gnueabihf/5/../../../arm-linux-gnueabihf/crti.o /usr/lib/gcc/arm-linux-gnueabihf/5/crtbegin.o -L/usr/lib/gcc/arm-linux-gnueabihf/5 -L/usr/lib/gcc/arm-linux-gnueabihf/5/../../../arm-linux-gnueabihf -L/usr/lib/gcc/arm-linux-gnueabihf/5/../../../../lib -L/lib/arm-linux-gnueabihf -L/lib/../lib -L/usr/lib/arm-linux-gnueabihf -L/usr/lib/../lib -L/usr/lib/gcc/arm-linux-gnueabihf/5/../../.. CMakeFiles/cmTC_0c717.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/arm-linux-gnueabihf/5/crtend.o /usr/lib/gcc/arm-linux-gnueabihf/5/../../../arm-linux-gnueabihf/crtn.o]
     arg [/usr/lib/gcc/arm-linux-gnueabihf/5/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/usr/lib/gcc/arm-linux-gnueabihf/5/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/lib/gcc/arm-linux-gnueabihf/5/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/ccLvZCJr.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccPyiVvh.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -296,7 +296,7 @@ Parsed CXX implicit link information from above output:
     arg [armelf_linux_eabi] ==> ignore
     arg [-zrelro] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_31226] ==> ignore
+    arg [cmTC_0c717] ==> ignore
     arg [/usr/lib/gcc/arm-linux-gnueabihf/5/../../../arm-linux-gnueabihf/crt1.o] ==> ignore
     arg [/usr/lib/gcc/arm-linux-gnueabihf/5/../../../arm-linux-gnueabihf/crti.o] ==> ignore
     arg [/usr/lib/gcc/arm-linux-gnueabihf/5/crtbegin.o] ==> ignore
@@ -308,7 +308,7 @@ Parsed CXX implicit link information from above output:
     arg [-L/usr/lib/arm-linux-gnueabihf] ==> dir [/usr/lib/arm-linux-gnueabihf]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/arm-linux-gnueabihf/5/../../..] ==> dir [/usr/lib/gcc/arm-linux-gnueabihf/5/../../..]
-    arg [CMakeFiles/cmTC_31226.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [CMakeFiles/cmTC_0c717.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
     arg [-lstdc++] ==> lib [stdc++]
     arg [-lm] ==> lib [m]
     arg [-lgcc_s] ==> lib [gcc_s]
@@ -340,14 +340,14 @@ Parsed CXX implicit link information from above output:
 Detecting CXX [-std=c++14] compiler features compiled with the following output:
 Change Dir: /home/odroid/catkin_ws/src/image_pipeline/depth_image_proc/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_abe15/fast"
-/usr/bin/make -f CMakeFiles/cmTC_abe15.dir/build.make CMakeFiles/cmTC_abe15.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_969b3/fast"
+/usr/bin/make -f CMakeFiles/cmTC_969b3.dir/build.make CMakeFiles/cmTC_969b3.dir/build
 make[1]: Entering directory '/home/odroid/catkin_ws/src/image_pipeline/depth_image_proc/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_abe15.dir/feature_tests.cxx.o
-/usr/bin/c++     -std=c++14 -o CMakeFiles/cmTC_abe15.dir/feature_tests.cxx.o -c /home/odroid/catkin_ws/src/image_pipeline/depth_image_proc/build/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_abe15
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_abe15.dir/link.txt --verbose=1
-/usr/bin/c++        CMakeFiles/cmTC_abe15.dir/feature_tests.cxx.o  -o cmTC_abe15 -rdynamic 
+Building CXX object CMakeFiles/cmTC_969b3.dir/feature_tests.cxx.o
+/usr/bin/c++     -std=c++14 -o CMakeFiles/cmTC_969b3.dir/feature_tests.cxx.o -c /home/odroid/catkin_ws/src/image_pipeline/depth_image_proc/build/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_969b3
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_969b3.dir/link.txt --verbose=1
+/usr/bin/c++        CMakeFiles/cmTC_969b3.dir/feature_tests.cxx.o  -o cmTC_969b3 -rdynamic 
 make[1]: Leaving directory '/home/odroid/catkin_ws/src/image_pipeline/depth_image_proc/build/CMakeFiles/CMakeTmp'
 
 
@@ -413,14 +413,14 @@ make[1]: Leaving directory '/home/odroid/catkin_ws/src/image_pipeline/depth_imag
 Detecting CXX [-std=c++11] compiler features compiled with the following output:
 Change Dir: /home/odroid/catkin_ws/src/image_pipeline/depth_image_proc/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_ed111/fast"
-/usr/bin/make -f CMakeFiles/cmTC_ed111.dir/build.make CMakeFiles/cmTC_ed111.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_383aa/fast"
+/usr/bin/make -f CMakeFiles/cmTC_383aa.dir/build.make CMakeFiles/cmTC_383aa.dir/build
 make[1]: Entering directory '/home/odroid/catkin_ws/src/image_pipeline/depth_image_proc/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_ed111.dir/feature_tests.cxx.o
-/usr/bin/c++     -std=c++11 -o CMakeFiles/cmTC_ed111.dir/feature_tests.cxx.o -c /home/odroid/catkin_ws/src/image_pipeline/depth_image_proc/build/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_ed111
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ed111.dir/link.txt --verbose=1
-/usr/bin/c++        CMakeFiles/cmTC_ed111.dir/feature_tests.cxx.o  -o cmTC_ed111 -rdynamic 
+Building CXX object CMakeFiles/cmTC_383aa.dir/feature_tests.cxx.o
+/usr/bin/c++     -std=c++11 -o CMakeFiles/cmTC_383aa.dir/feature_tests.cxx.o -c /home/odroid/catkin_ws/src/image_pipeline/depth_image_proc/build/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_383aa
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_383aa.dir/link.txt --verbose=1
+/usr/bin/c++        CMakeFiles/cmTC_383aa.dir/feature_tests.cxx.o  -o cmTC_383aa -rdynamic 
 make[1]: Leaving directory '/home/odroid/catkin_ws/src/image_pipeline/depth_image_proc/build/CMakeFiles/CMakeTmp'
 
 
@@ -486,14 +486,14 @@ make[1]: Leaving directory '/home/odroid/catkin_ws/src/image_pipeline/depth_imag
 Detecting CXX [-std=c++98] compiler features compiled with the following output:
 Change Dir: /home/odroid/catkin_ws/src/image_pipeline/depth_image_proc/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_85de9/fast"
-/usr/bin/make -f CMakeFiles/cmTC_85de9.dir/build.make CMakeFiles/cmTC_85de9.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_01965/fast"
+/usr/bin/make -f CMakeFiles/cmTC_01965.dir/build.make CMakeFiles/cmTC_01965.dir/build
 make[1]: Entering directory '/home/odroid/catkin_ws/src/image_pipeline/depth_image_proc/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_85de9.dir/feature_tests.cxx.o
-/usr/bin/c++     -std=c++98 -o CMakeFiles/cmTC_85de9.dir/feature_tests.cxx.o -c /home/odroid/catkin_ws/src/image_pipeline/depth_image_proc/build/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_85de9
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_85de9.dir/link.txt --verbose=1
-/usr/bin/c++        CMakeFiles/cmTC_85de9.dir/feature_tests.cxx.o  -o cmTC_85de9 -rdynamic 
+Building CXX object CMakeFiles/cmTC_01965.dir/feature_tests.cxx.o
+/usr/bin/c++     -std=c++98 -o CMakeFiles/cmTC_01965.dir/feature_tests.cxx.o -c /home/odroid/catkin_ws/src/image_pipeline/depth_image_proc/build/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_01965
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_01965.dir/link.txt --verbose=1
+/usr/bin/c++        CMakeFiles/cmTC_01965.dir/feature_tests.cxx.o  -o cmTC_01965 -rdynamic 
 make[1]: Leaving directory '/home/odroid/catkin_ws/src/image_pipeline/depth_image_proc/build/CMakeFiles/CMakeTmp'
 
 
@@ -557,28 +557,28 @@ make[1]: Leaving directory '/home/odroid/catkin_ws/src/image_pipeline/depth_imag
 Determining if the include file pthread.h exists passed with the following output:
 Change Dir: /home/odroid/catkin_ws/src/image_pipeline/depth_image_proc/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_78440/fast"
-/usr/bin/make -f CMakeFiles/cmTC_78440.dir/build.make CMakeFiles/cmTC_78440.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_767e6/fast"
+/usr/bin/make -f CMakeFiles/cmTC_767e6.dir/build.make CMakeFiles/cmTC_767e6.dir/build
 make[1]: Entering directory '/home/odroid/catkin_ws/src/image_pipeline/depth_image_proc/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_78440.dir/CheckIncludeFile.c.o
-/usr/bin/cc     -o CMakeFiles/cmTC_78440.dir/CheckIncludeFile.c.o   -c /home/odroid/catkin_ws/src/image_pipeline/depth_image_proc/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
-Linking C executable cmTC_78440
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_78440.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTC_78440.dir/CheckIncludeFile.c.o  -o cmTC_78440 -rdynamic 
+Building C object CMakeFiles/cmTC_767e6.dir/CheckIncludeFile.c.o
+/usr/bin/cc     -o CMakeFiles/cmTC_767e6.dir/CheckIncludeFile.c.o   -c /home/odroid/catkin_ws/src/image_pipeline/depth_image_proc/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_767e6
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_767e6.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_767e6.dir/CheckIncludeFile.c.o  -o cmTC_767e6 -rdynamic 
 make[1]: Leaving directory '/home/odroid/catkin_ws/src/image_pipeline/depth_image_proc/build/CMakeFiles/CMakeTmp'
 
 
 Determining if the function pthread_create exists in the pthread passed with the following output:
 Change Dir: /home/odroid/catkin_ws/src/image_pipeline/depth_image_proc/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_1e4a0/fast"
-/usr/bin/make -f CMakeFiles/cmTC_1e4a0.dir/build.make CMakeFiles/cmTC_1e4a0.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_075fc/fast"
+/usr/bin/make -f CMakeFiles/cmTC_075fc.dir/build.make CMakeFiles/cmTC_075fc.dir/build
 make[1]: Entering directory '/home/odroid/catkin_ws/src/image_pipeline/depth_image_proc/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_1e4a0.dir/CheckFunctionExists.c.o
-/usr/bin/cc    -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_1e4a0.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
-Linking C executable cmTC_1e4a0
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1e4a0.dir/link.txt --verbose=1
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_1e4a0.dir/CheckFunctionExists.c.o  -o cmTC_1e4a0 -rdynamic -lpthread 
+Building C object CMakeFiles/cmTC_075fc.dir/CheckFunctionExists.c.o
+/usr/bin/cc    -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_075fc.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
+Linking C executable cmTC_075fc
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_075fc.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_075fc.dir/CheckFunctionExists.c.o  -o cmTC_075fc -rdynamic -lpthread 
 make[1]: Leaving directory '/home/odroid/catkin_ws/src/image_pipeline/depth_image_proc/build/CMakeFiles/CMakeTmp'
 
 
