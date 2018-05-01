@@ -67,6 +67,18 @@ def worker():
         ir_output_left = int(1.0/servo.getPosition(6)*10e5)
         ir_output_right = int(1.0/servo.getPosition(11)*10e5)-500
         ir_output_diff = ir_output_left - ir_output_right
+
+        if ir_output_right > 300
+            
+            servo.setTarget(1, 3000);
+            rate.sleep(0.1)
+            servo.setRange(0, 6000);
+            rate.sleep(0.2)
+            servo.setRange(0, EXTREME_RIGHT);
+            rate.sleep(2.)
+            
+        end if
+
         pub.publish(ir_output_diff)
         #print "IR: " + str(ir_output_diff)
         print "IR_Control " + str(controlEffort_IR)
