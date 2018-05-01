@@ -1,8 +1,0 @@
-prefix=/home/odroid/catkin_ws/src/image_pipeline/image_view/build/devel
-
-Name: image_view
-Description: Description of image_view
-Version: 1.12.22
-Cflags: -I/home/odroid/catkin_ws/src/image_pipeline/image_view/build/devel/include
-Libs: -L/home/odroid/catkin_ws/src/image_pipeline/image_view/build/devel/lib 
-Requires: dynamic_reconfigure
