@@ -17,6 +17,10 @@ pub = rospy.Publisher('state', Float64, queue_size=10)
 pub2 = rospy.Publisher('pid_enable', Bool, queue_size=10)
 global controlEffort_IR
 global controlEffort_IMU
+global IMU_Coeff
+global flag
+flag = True
+IMU_Coeff = 200
 controlEffort_IR = 0
 controlEffort_IMU = 0
 # setup functio
@@ -31,7 +35,7 @@ def setup():
     time.sleep(3)
 
     # set servo speed
-    servo.setTarget(1, 6500)
+    servo.setTarget(1, 6800)
     #servo.setTarget(1, 6170)
     cmd_servo = CENTER_VALUE
     # initilize the ROS node
@@ -43,7 +47,7 @@ def setup():
 def callback2(data):
     #print data.angular_velocity.z
     global controlEffort_IMU
-    controlEffort_IMU = -int(data.angular_velocity.z*400)
+    controlEffort_IMU = -int(data.angular_velocity.z*IMU_Coeff)
 
 
 def callback(data):
@@ -65,19 +69,22 @@ def worker():
         #ir_output = int((servo.getPosition(6)/4+245)*16-17)
         # inverse the measurement
         ir_output_left = int(1.0/servo.getPosition(6)*10e5)
-        ir_output_right = int(1.0/servo.getPosition(11)*10e5)-500
+        ir_output_right = int(1.0/servo.getPosition(11)*10e5)
         ir_output_diff = ir_output_left - ir_output_right
-
-        if ir_output_right > 300
-            
-            servo.setTarget(1, 3000);
-            rate.sleep(0.1)
-            servo.setRange(0, 6000);
-            rate.sleep(0.2)
-            servo.setRange(0, EXTREME_RIGHT);
-            rate.sleep(2.)
-            
-        end if
+        print ir_output_right
+        global flag
+        if ir_output_right > 3500 and flag == True:
+            print "########################################################"
+            servo.setTarget(0, 5800)
+            rospy.Rate(10).sleep()
+            servo.setTarget(0, 7500)
+            rospy.Rate(1000).sleep()
+            servo.setTarget(1, 3000)
+            rospy.Rate(1.5).sleep()
+            servo.setTarget(1, 6700)
+            flag = False
+            global IMU_Coeff
+            IMU_Coeff = 800
 
         pub.publish(ir_output_diff)
         #print "IR: " + str(ir_output_diff)

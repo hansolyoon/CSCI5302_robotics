@@ -1,6 +1,6 @@
 <launch>
     <node name="IR_PID" pkg="pid" type="controller" output="screen" respawn="true">
-      <param name="Kp" value="4.0" />
+      <param name="Kp" value="3.0" />
       <param name="Ki" value="0.5"/>
       <param name="Kd" value="0.5" />
       <param name="upper_limit" value="1500" />
