@@ -35,7 +35,7 @@ def setup():
     time.sleep(3)
 
     # set servo speed
-    servo.setTarget(1, 6800)
+    servo.setTarget(1, 6550)
     #servo.setTarget(1, 6170)
     cmd_servo = CENTER_VALUE
     # initilize the ROS node
@@ -73,18 +73,19 @@ def worker():
         ir_output_diff = ir_output_left - ir_output_right
         print ir_output_right
         global flag
+
         if ir_output_right > 3500 and flag == True:
             print "########################################################"
-            servo.setTarget(0, 5800)
-            rospy.Rate(10).sleep()
-            servo.setTarget(0, 7500)
-            rospy.Rate(1000).sleep()
-            servo.setTarget(1, 3000)
+            #servo.setTarget(0, 5600)
+            #rospy.Rate(8).sleep()
+            servo.setTarget(0, 7900)
+            rospy.Rate(300).sleep()
+            servo.setTarget(1, 7900)
             rospy.Rate(1.5).sleep()
-            servo.setTarget(1, 6700)
             flag = False
             global IMU_Coeff
-            IMU_Coeff = 800
+            IMU_Coeff = 900
+            servo.setTarget(1, 7000)
 
         pub.publish(ir_output_diff)
         #print "IR: " + str(ir_output_diff)
