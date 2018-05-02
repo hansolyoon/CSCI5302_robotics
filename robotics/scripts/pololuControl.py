@@ -19,7 +19,8 @@ global controlEffort_IR
 global controlEffort_IMU
 global IMU_Coeff
 global flag
-flag = True
+global startTime
+flag = False
 IMU_Coeff = 200
 controlEffort_IR = 0
 controlEffort_IMU = 0
@@ -35,7 +36,7 @@ def setup():
     time.sleep(3)
 
     # set servo speed
-    servo.setTarget(1, 6550)
+    servo.setTarget(1, 6500)
     #servo.setTarget(1, 6170)
     cmd_servo = CENTER_VALUE
     # initilize the ROS node
@@ -43,6 +44,8 @@ def setup():
     # initilize the Subscriber for PID output
     rospy.Subscriber("control_effort", Float64, callback)
     rospy.Subscriber("imu/data", Imu, callback2)
+    global startTime
+    startTime = time.time()
 
 def callback2(data):
     #print data.angular_velocity.z
@@ -73,8 +76,9 @@ def worker():
         ir_output_diff = ir_output_left - ir_output_right
         print ir_output_right
         global flag
+        global startTime
 
-        if ir_output_right > 3500 and flag == True:
+        if ir_output_right > 3200 and flag == True:
             print "########################################################"
             #servo.setTarget(0, 5600)
             #rospy.Rate(8).sleep()
@@ -84,8 +88,15 @@ def worker():
             rospy.Rate(1.5).sleep()
             flag = False
             global IMU_Coeff
-            IMU_Coeff = 900
-            servo.setTarget(1, 7000)
+            IMU_Coeff = 600
+            startTime = time.time()
+            servo.setTarget(1, 6500)
+
+        if (time.time() - startTime) > 4.5:
+            flag = True
+
+        print (time.time() - startTime)
+        print (flag)
 
         pub.publish(ir_output_diff)
         #print "IR: " + str(ir_output_diff)
