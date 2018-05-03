@@ -37,7 +37,7 @@ def setup():
     time.sleep(3)
 
     # set servo speed
-    servo.setTarget(1, 6800)
+    servo.setTarget(1, 6600)
     #servo.setTarget(1, 6170)
     cmd_servo = CENTER_VALUE
     # initilize the ROS node
@@ -80,14 +80,14 @@ def worker():
         global flag
         global startTime
 
-        if ir_output_right > 3800 and ir_output_left < 3200 and flag == True:
+        if ir_output_right > 3700 and ir_output_left < 4000 and flag == True:
             print "########################################################"
             #servo.setTarget(0, 5600)
             #rospy.Rate(8).sleep()
             servo.setTarget(0, 7500)
             rospy.Rate(300).sleep()
-            servo.setTarget(1,5000)
-            rospy.Rate(2).sleep()
+            servo.setTarget(1,4000)
+            rospy.Rate(4).sleep()
             flag = False
             global IMU_Coeff
             IMU_Coeff = 800

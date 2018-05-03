@@ -10,10 +10,16 @@ def talker():
     rospy.init_node('setPoint_node', anonymous=True)
     rate = rospy.Rate(100)
     while not rospy.is_shutdown():
+<<<<<<< HEAD
         pub1.publish(2500)
         pub2.publish(-66)
         pub3.publish(-166)
         pub4.publish(72)
+=======
+        hello = 2300
+        #rospy.loginfo(hello)
+        pub.publish(hello)
+>>>>>>> racing_finalexam
         rate.sleep()
 
 if __name__ == '__main__':
