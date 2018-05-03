@@ -29,8 +29,8 @@ brake = 3.0
 
 # setup functio
 def setup():
-    servo.setSpeed(0, 0)
-    servo.setAccel(0, 0)
+    servo.setSpeed(0, 1)
+    servo.setAccel(0, 1)
     servo.setSpeed(1, 0)
     servo.setAccel(1, 0)
     servo.setRange(0, EXTREME_LEFT, EXTREME_RIGHT)
@@ -39,7 +39,7 @@ def setup():
     time.sleep(3)
 
     # set servo speed
-    servo.setTarget(1, 6500)
+    servo.setTarget(1, 6800)
     #servo.setTarget(1, 6170)
     cmd_servo = CENTER_VALUE
     # initilize the ROS node
@@ -79,22 +79,24 @@ def worker():
         ir_output_diff = ir_output_left - ir_output_right
         print "Front: " + str(ir_output_left)
         print "Right: " + str(ir_output_right)
-	print (time.time()-startTime)
+        print (time.time()-startTime)
         print "----------------------------"
         global flag
         global startTime
         global brake
 
         if ((time.time()-startTime) > brake):
+            servo.setSpeedd(1, 0)
             servo.setAccel(1, 0)
             print "!!!!!!!!!!!!!!!!!!!!!!!!!! brake !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
             servo.setTarget(0, 6400)
             rospy.Rate(300).sleep()
-            #servo.setTarget(1,6300)
-            #rospy.Rate(2).sleep()
-            #servo.setTarget(1,6500)
+            servo.setTarget(1,6300)
+            rospy.Rate(2).sleep()
+            servo.setTarget(1,6500)
             brake = 7.0
             startTime = time.time()
+            servo.setSpeedd(1, 0)
             servo.setAccel(1,1)
 
         if ir_output_right > 3500 and ir_output_left < 4000 and flag == True:
