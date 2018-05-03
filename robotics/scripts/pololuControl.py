@@ -20,8 +20,8 @@ global controlEffort_IMU
 global IMU_Coeff
 global flag
 global startTime
-flag = False
-IMU_Coeff = 200
+flag = True
+IMU_Coeff = 800
 controlEffort_IR = 0
 controlEffort_IMU = 0
 # setup functio
@@ -36,7 +36,7 @@ def setup():
     time.sleep(3)
 
     # set servo speed
-    servo.setTarget(1, 6500)
+    servo.setTarget(1, 6800)
     #servo.setTarget(1, 6170)
     cmd_servo = CENTER_VALUE
     # initilize the ROS node
@@ -74,35 +74,33 @@ def worker():
         ir_output_left = int(1.0/servo.getPosition(6)*10e5)
         ir_output_right = int(1.0/servo.getPosition(11)*10e5)
         ir_output_diff = ir_output_left - ir_output_right
-        print ir_output_right
+        print "Front: " + str(ir_output_left)
+        print "Right: " + str(ir_output_right)
         global flag
         global startTime
 
-        if ir_output_right > 3200 and flag == True:
+        if ir_output_right > 3800 and ir_output_left < 3200 and flag == True:
             print "########################################################"
             #servo.setTarget(0, 5600)
             #rospy.Rate(8).sleep()
-            servo.setTarget(0, 7900)
+            servo.setTarget(0, 7500)
             rospy.Rate(300).sleep()
-            servo.setTarget(1, 7900)
-            rospy.Rate(1.5).sleep()
+            servo.setTarget(1,5000)
+            rospy.Rate(2).sleep()
             flag = False
             global IMU_Coeff
-            IMU_Coeff = 600
+            IMU_Coeff = 800
             startTime = time.time()
-            servo.setTarget(1, 6500)
+            servo.setTarget(1, 6800)
 
-        if (time.time() - startTime) > 4.5:
+        if (time.time()-startTime > 2):
             flag = True
 
-        print (time.time() - startTime)
-        print (flag)
-
-        pub.publish(ir_output_diff)
+        pub.publish(ir_output_right)
         #print "IR: " + str(ir_output_diff)
         print "IR_Control " + str(controlEffort_IR)
         print "IMU_Control " + str(controlEffort_IMU)
-        servo.setTarget(0, CENTER_VALUE+controlEffort_IR+controlEffort_IMU)
+        servo.setTarget(0, CENTER_VALUE-controlEffort_IR+controlEffort_IMU)
         rate.sleep()
     if rospy.is_shutdown():
         servo.setTarget(1, 3000)
