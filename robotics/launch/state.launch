@@ -1,0 +1,61 @@
+<launch>
+################################ Nodelet Manager ###############################
+    <node pkg="nodelet" type="nodelet" name="imu_manager"
+      args="manager" output="screen" />
+################################ IMU Driver ####################################
+  <node pkg="nodelet" type="nodelet" name="PhidgetsImuNodelet"
+    args="load phidgets_imu/PhidgetsImuNodelet imu_manager"
+    output="screen">
+
+    # supported data rates: 4 8 16 24 32 40 ... 1000 (in ms)
+    <param name="period" value="4"/>
+  </node>
+
+############################ IMU Orientation Filter ############################
+  <node pkg="nodelet" type="nodelet" name="ImuFilterNodelet"
+    args="load imu_filter_madgwick/ImuFilterNodelet imu_manager" respawn="true"
+    output="screen">
+
+    <param name="use_mag" value="true"/>
+    <param name="world_frame" value="nwu"/>
+    <param name="use_magnetic_field_msg" value="false"/>
+
+  </node>
+############################ Bearing Angle Calculation #########################
+  <node name="bearingCalculation_node" pkg="robotics" type="bearing.py" respawn="true" output="screen">
+  </node>
+################################ PID Contoller for IR #################################
+    <node name="IR_PID" pkg="pid" type="controller" output="screen" respawn="true">
+      <param name="Kp" value="2" />
+      <param name="Ki" value="0"/>
+      <param name="Kd" value="1" />
+      <param name="upper_limit" value="1300" />
+      <param name="lower_limit" value="-1300" />
+      <param name="windup_limit" value="10" />
+      <param name="cutoff_frequency" value="20" />
+      <param name="max_loop_frequency" value="50.0" />
+      <param name="min_loop_frequency" value="50.0" />
+      <remap from="control_effort" to="/control_effort_ir" />
+    </node>
+################################ PID Contoller for Heading #################################
+    <node name="HEADING_PID" pkg="pid" type="controller" output="screen" respawn="true">
+      <param name="Kp" value="8" />
+      <param name="Ki" value="0.5"/>
+      <param name="Kd" value="0.5" />
+      <param name="upper_limit" value="2000" />
+      <param name="lower_limit" value="-2000" />
+      <param name="windup_limit" value="10" />
+      <param name="cutoff_frequency" value="20" />
+      <param name="max_loop_frequency" value="50.0" />
+      <param name="min_loop_frequency" value="50.0" />
+      <remap from="state" to="/bearing" />
+      <remap from="setpoint" to="/setheading" />
+      <remap from="control_effort" to="/control_effort_heading" />
+    </node>
+
+#################################### Pololu Node ##############################
+
+    <node name="stateControl_node" pkg="robotics" type="stateControl.py" respawn="true" output="screen">
+  </node>
+
+</launch>
