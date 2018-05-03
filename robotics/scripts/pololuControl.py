@@ -20,10 +20,12 @@ global controlEffort_IMU
 global IMU_Coeff
 global flag
 global startTime
+global brake
 flag = True
 IMU_Coeff = 800
 controlEffort_IR = 0
 controlEffort_IMU = 0
+brake = 2
 # setup functio
 def setup():
     servo.setSpeed(0, 0)
@@ -76,17 +78,28 @@ def worker():
         ir_output_diff = ir_output_left - ir_output_right
         print "Front: " + str(ir_output_left)
         print "Right: " + str(ir_output_right)
+        print "----------------------------"
         global flag
         global startTime
+        global brake
 
-        if ir_output_right > 3800 and ir_output_left < 3200 and flag == True:
-            print "########################################################"
+        if ((time.time()-startTime) > brake):
+            print "!!!!!!!!!!!!!!!!!!!!!!!!!! brake !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+            servo.setTarget(0, 6550)
+            rospy.Rate(300).sleep()
+            servo.setTarget(1,3000)
+            rospy.Rate(2).sleep()
+            servo.setTarget(1,6400)
+            brake = 7
+
+        if ir_output_right > 3500 and ir_output_left < 4000 and flag == True:
+            print "########################### corner #############################"
             #servo.setTarget(0, 5600)
             #rospy.Rate(8).sleep()
-            servo.setTarget(0, 7500)
+            servo.setTarget(0, 7000)
             rospy.Rate(300).sleep()
-            servo.setTarget(1,5000)
-            rospy.Rate(2).sleep()
+            # servo.setTarget(1,6500)
+            # rospy.Rate(2).sleep()
             flag = False
             global IMU_Coeff
             IMU_Coeff = 800
