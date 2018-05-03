@@ -25,7 +25,7 @@ flag = True
 IMU_Coeff = 800
 controlEffort_IR = 0
 controlEffort_IMU = 0
-brake = 2
+brake = 3.0
 # setup functio
 def setup():
     servo.setSpeed(0, 0)
@@ -38,7 +38,7 @@ def setup():
     time.sleep(3)
 
     # set servo speed
-    servo.setTarget(1, 6800)
+    servo.setTarget(1, 7000)
     #servo.setTarget(1, 6170)
     cmd_servo = CENTER_VALUE
     # initilize the ROS node
@@ -78,6 +78,7 @@ def worker():
         ir_output_diff = ir_output_left - ir_output_right
         print "Front: " + str(ir_output_left)
         print "Right: " + str(ir_output_right)
+	print (time.time()-startTime)
         print "----------------------------"
         global flag
         global startTime
@@ -89,8 +90,9 @@ def worker():
             rospy.Rate(300).sleep()
             servo.setTarget(1,3000)
             rospy.Rate(2).sleep()
-            servo.setTarget(1,6400)
-            brake = 7
+            servo.setTarget(1,6500)
+            brake = 7.0
+            startTime = time.time()
 
         if ir_output_right > 3500 and ir_output_left < 4000 and flag == True:
             print "########################### corner #############################"
@@ -103,10 +105,9 @@ def worker():
             flag = False
             global IMU_Coeff
             IMU_Coeff = 800
-            startTime = time.time()
-            servo.setTarget(1, 6800)
+            servo.setTarget(1, 7000)
 
-        if (time.time()-startTime > 2):
+        if (time.time()-startTime > 5):
             flag = True
 
         pub.publish(ir_output_right)

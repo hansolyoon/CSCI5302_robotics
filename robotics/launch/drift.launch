@@ -24,8 +24,8 @@
 ################################ PID Contoller #################################
     <node name="IR_PID" pkg="pid" type="controller" output="screen" respawn="true">
       <param name="Kp" value="3" />
-      <param name="Ki" value="0"/>
-      <param name="Kd" value="0.5" />
+      <param name="Ki" value="0.5"/>
+      <param name="Kd" value="2" />
       <param name="upper_limit" value="2000" />
       <param name="lower_limit" value="-2000" />
       <param name="windup_limit" value="10" />
