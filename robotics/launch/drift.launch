@@ -18,7 +18,7 @@
 
     <param name="use_mag" value="true"/>
     <param name="world_frame" value="nwu"/>
-    <param name="use_magnetic_field_msg" value="false"/>
+    <param name="use_magnetic_field_msg" value="true"/>
 
   </node>
 ################################ PID Contoller #################################
