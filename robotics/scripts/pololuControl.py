@@ -26,6 +26,7 @@ IMU_Coeff = 800
 controlEffort_IR = 0
 controlEffort_IMU = 0
 brake = 3.0
+
 # setup functio
 def setup():
     servo.setSpeed(0, 0)
@@ -38,7 +39,7 @@ def setup():
     time.sleep(3)
 
     # set servo speed
-    servo.setTarget(1, 7000)
+    servo.setTarget(1, 6500)
     #servo.setTarget(1, 6170)
     cmd_servo = CENTER_VALUE
     # initilize the ROS node
@@ -85,14 +86,16 @@ def worker():
         global brake
 
         if ((time.time()-startTime) > brake):
+            servo.setAccel(1, 0)
             print "!!!!!!!!!!!!!!!!!!!!!!!!!! brake !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-            servo.setTarget(0, 6550)
+            servo.setTarget(0, 6400)
             rospy.Rate(300).sleep()
-            servo.setTarget(1,3000)
-            rospy.Rate(2).sleep()
-            servo.setTarget(1,6500)
+            #servo.setTarget(1,6300)
+            #rospy.Rate(2).sleep()
+            #servo.setTarget(1,6500)
             brake = 7.0
             startTime = time.time()
+            servo.setAccel(1,1)
 
         if ir_output_right > 3500 and ir_output_left < 4000 and flag == True:
             print "########################### corner #############################"
@@ -105,7 +108,7 @@ def worker():
             flag = False
             global IMU_Coeff
             IMU_Coeff = 800
-            servo.setTarget(1, 7000)
+            servo.setTarget(1, 6500)
 
         if (time.time()-startTime > 5):
             flag = True
