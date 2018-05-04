@@ -37,6 +37,8 @@ def worker():
         bearingAngle = yawAngle * (180.0/math.pi)
         if not math.isnan(bearingAngle):
             #print bearingAngle
+            if bearingAngle < 0:
+                bearingAngle = bearingAngle + 360
             pub.publish(bearingAngle)
         rate.sleep()
 
