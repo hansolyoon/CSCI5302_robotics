@@ -32,14 +32,15 @@ heading = 260
 global stateNumber
 stateNumber = 1
 global speed
-speed = 6000
+speed = 8000
 global bearing
 bearing = 0
 global flag
 flag = False
 global IMU_Coeff
 IMU_Coeff = 500
-
+global stopTime
+stopTime = 2.5
 
 # setup function
 def setup():
@@ -50,7 +51,7 @@ def setup():
     servo.setTarget(0, CENTER_VALUE)
     # motor
     servo.setSpeed(1, 0)
-    servo.setAccel(1, 250)
+    servo.setAccel(1, 200)
     servo.setRange(1, 4000, 8000)
     servo.setTarget(0, 6000)
     # initilize node
@@ -79,7 +80,7 @@ def callback4(data):
     controlEffort_IMU = -int(data.angular_velocity.z*IMU_Coeff)
 
 def worker():
-    global stateNumber, speed, control_effort_IR, control_effort_heading, bearing, flag, IMU_Coeff, controlEffort_IMU
+    global stateNumber, speed, control_effort_IR, control_effort_heading, bearing, flag, IMU_Coeff, controlEffort_IMU, stopTime
     queue = deque([0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0])
     stateChangeTime = time.time()
     rate = rospy.Rate(200)
@@ -89,28 +90,32 @@ def worker():
         print "Current heading: " + str(bearing)
         print "Heading Effort: " + str(control_effort_heading)
         # get IR readings
-        if servo.getPosition(6) == 0:
-            ir_output_front = ir_output_front
+        front = servo.getPosition(6)
+        if front == 0:
+            ir_output_front = 3600
         else:
-            ir_output_front = int(1.0/servo.getPosition(6)*10e5)
-        if servo.getPosition(11) == 0:
-            ir_output_right = ir_output_right
+            ir_output_front = int(1.0/front*10e5)
+        right = servo.getPosition(11)
+        if right == 0:
+            ir_output_right = 2200
         else:
-            ir_output_right = int(1.0/servo.getPosition(11)*10e5)
+            ir_output_right = int(1.0/right*10e5)
         print "IR Front: " + str(ir_output_front)
         print "IR Right: " + str(ir_output_right)
         queue.append(ir_output_front)
 
         for x in queue:
-            if x > 4000:
+            if x > 3400:
                 flag = False
         queue.popleft()
-        if ir_output_right > 3000 and ir_output_right < 4000 and flag:
+        if ir_output_right > 2800 and ir_output_right < 4000 and flag and stateNumber < 3:
             print "####################State Change#############################"
-            servo.setTarget(0, 7500)
+            servo.setTarget(0, 7000)
             rospy.Rate(300).sleep()
-            servo.setTarget(1,4000)
-            rospy.Rate(2).sleep()
+            servo.setTarget(1,3800)
+            rospy.Rate(2.5).sleep()
+            servo.setTarget(1,6000)
+            rospy.Rate(200).sleep()
             stateNumber = stateNumber + 1
             stateChangeTime = time.time()
             flag = False
@@ -118,16 +123,18 @@ def worker():
             flag = True
         if stateNumber == 1:
             heading = 260
-            speed = 4500
-            setPoint = 2300
+            speed = 6550
+            setPoint = 2150
+            stopTime = 5
         if stateNumber == 2:
             heading = 202
-            speed = 4500
-            setPoint = 2300
+            speed = 6600
+            setPoint = 2000
+            stopTime = 4
         if stateNumber == 3:
             heading = 155;
-            speed = 4500
-            setPoint = 2500
+            speed = 6550
+            setPoint = 2300
         if stateNumber == 4:
             rospy.signal_shutdown("Incorrect State Number")
             break
@@ -135,10 +142,8 @@ def worker():
         pub2.publish(True)
         pub3.publish(setPoint)
         pub4.publish(heading)
-        if ir_output_right > 4000:
-            control_effort_IR = 0
-        servo.setTarget(0, int(CENTER_VALUE-control_effort_IR*0.6-control_effort_heading+controlEffort_IMU))
-        servo.setTarget(1, int(speed - abs(control_effort_heading)*0.12))
+        servo.setTarget(0, int(CENTER_VALUE-control_effort_IR*0.7-control_effort_heading+controlEffort_IMU))
+        servo.setTarget(1, int(speed - abs(control_effort_heading)*0.1))
         rate.sleep()
     if rospy.is_shutdown():
         servo.setTarget(0, CENTER_VALUE)
