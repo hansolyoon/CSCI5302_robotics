@@ -80,10 +80,13 @@ def callback4(data):
     controlEffort_IMU = -int(data.angular_velocity.z*IMU_Coeff)
 
 def worker():
-    global stateNumber, speed, control_effort_IR, control_effort_heading, bearing, flag, IMU_Coeff, controlEffort_IMU, stopTime
+    global stateNumber, speed, control_effort_IR, control_effort_heading, bearing, flag, IMU_Coeff, controlEffort_IMU, stopTime, no_turn_time, file_name
     queue = deque([0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0])
     stateChangeTime = time.time()
-    rate = rospy.Rate(200)
+    rate = rospy.Rate(300)
+    no_turn_time = 4.5
+    file_name = str(stateChangeTime) + ".txt"
+    f = open(file_name,"w")
     while not rospy.is_shutdown():
         print "State: " + str(stateNumber)
         print "IR: Effort: " + str(control_effort_IR)
@@ -100,25 +103,26 @@ def worker():
             ir_output_right = 2200
         else:
             ir_output_right = int(1.0/right*10e5)
+        f.write("Front: " +str(ir_output_front) + "\n")
+        f.write("Right: " +str(ir_output_right) + "\n")
         print "IR Front: " + str(ir_output_front)
         print "IR Right: " + str(ir_output_right)
-        print (time.time() - stateChangeTime)
+        print time.time() - stateChangeTime
         print "-----------------------------"
+        f.write("------------------------")
         queue.append(ir_output_front)
 
         for x in queue:
-            if x > 5800:
+            if x > 5000:
                 flag = False
             else:
                	speed = speed - 100
         queue.popleft()
-        if time.time() - stateChangeTime > 5:
+        if time.time() - stateChangeTime > no_turn_time:
            flag = True
         if ir_output_right > 3300 and ir_output_right < 5000 and flag and stateNumber < 3:
             print "####################State Change#############################"
-            servo.setTarget(1,6400)
-            rospy.Rate(100).sleep()
-            servo.setTarget(0, 7000)
+            servo.setTarget(0, 7200)
             rospy.Rate(300).sleep()
             servo.setTarget(1,3200)
             rospy.Rate(stopTime).sleep()
@@ -129,18 +133,19 @@ def worker():
             flag = False
         if stateNumber == 1:
             heading = 260
-            speed = 6500
-            setPoint = 2050
-            stopTime = 3.4
+            speed = 6550
+            setPoint = 2400
+            stopTime = 2.5
         if stateNumber == 2:
             heading = 202
             speed = 6600
-            setPoint = 2000
+            setPoint = 2400
             stopTime = 2
+            no_turn_time = 5
         if stateNumber == 3:
             heading = 155;
-            speed = 6500
-            setPoint = 2300
+            speed = 6550
+            setPoint = 2400
         if stateNumber == 4:
             rospy.signal_shutdown("Incorrect State Number")
             break
