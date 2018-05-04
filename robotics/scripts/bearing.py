@@ -16,7 +16,7 @@ pub = rospy.Publisher('bearing', Float64, queue_size=10)
 def setup():
     rospy.init_node("bearing_node", anonymous = True)
     rospy.Subscriber("imu/data", Imu, callback1)
-    rospy.Subscriber("imu/mag", Vector3Stamped, callback2)
+    rospy.Subscriber("imu/mag", MagneticField, callback2)
 
 def callback1(data):
     global gravity
@@ -24,7 +24,7 @@ def callback1(data):
     #print gravity
 def callback2(data):
     global magField
-    magField = [data.vector.x,data.vector.y,data.vector.z]
+    magField = [data.magnetic_field.x, data.magnetic_field.y,data.magnetic_field.z]
     #print magField
 
 def worker():

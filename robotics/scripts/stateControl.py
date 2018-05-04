@@ -51,7 +51,7 @@ def setup():
     servo.setTarget(0, CENTER_VALUE)
     # motor
     servo.setSpeed(1, 0)
-    servo.setAccel(1, 200)
+    servo.setAccel(1, 180)
     servo.setRange(1, 4000, 8000)
     servo.setTarget(0, 6000)
     # initilize node
@@ -102,38 +102,44 @@ def worker():
             ir_output_right = int(1.0/right*10e5)
         print "IR Front: " + str(ir_output_front)
         print "IR Right: " + str(ir_output_right)
+        print (time.time() - stateChangeTime)
+        print "-----------------------------"
         queue.append(ir_output_front)
 
         for x in queue:
-            if x > 3400:
+            if x > 5800:
                 flag = False
+            else:
+               	speed = speed - 100
         queue.popleft()
-        if ir_output_right > 2800 and ir_output_right < 4000 and flag and stateNumber < 3:
+        if time.time() - stateChangeTime > 5:
+           flag = True
+        if ir_output_right > 3300 and ir_output_right < 5000 and flag and stateNumber < 3:
             print "####################State Change#############################"
+            servo.setTarget(1,6400)
+            rospy.Rate(100).sleep()
             servo.setTarget(0, 7000)
             rospy.Rate(300).sleep()
-            servo.setTarget(1,3800)
-            rospy.Rate(2.5).sleep()
+            servo.setTarget(1,3200)
+            rospy.Rate(stopTime).sleep()
             servo.setTarget(1,6000)
             rospy.Rate(200).sleep()
             stateNumber = stateNumber + 1
             stateChangeTime = time.time()
             flag = False
-        if time.time() - stateChangeTime > 5:
-            flag = True
         if stateNumber == 1:
             heading = 260
-            speed = 6550
-            setPoint = 2150
-            stopTime = 5
+            speed = 6500
+            setPoint = 2050
+            stopTime = 3.4
         if stateNumber == 2:
             heading = 202
             speed = 6600
             setPoint = 2000
-            stopTime = 4
+            stopTime = 2
         if stateNumber == 3:
             heading = 155;
-            speed = 6550
+            speed = 6500
             setPoint = 2300
         if stateNumber == 4:
             rospy.signal_shutdown("Incorrect State Number")
@@ -142,7 +148,7 @@ def worker():
         pub2.publish(True)
         pub3.publish(setPoint)
         pub4.publish(heading)
-        servo.setTarget(0, int(CENTER_VALUE-control_effort_IR*0.7-control_effort_heading+controlEffort_IMU))
+        servo.setTarget(0, int(CENTER_VALUE-control_effort_IR*0.75-control_effort_heading+controlEffort_IMU))
         servo.setTarget(1, int(speed - abs(control_effort_heading)*0.1))
         rate.sleep()
     if rospy.is_shutdown():
