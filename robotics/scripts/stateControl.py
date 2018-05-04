@@ -80,13 +80,14 @@ def callback4(data):
     controlEffort_IMU = -int(data.angular_velocity.z*IMU_Coeff)
 
 def worker():
-    global stateNumber, speed, control_effort_IR, control_effort_heading, bearing, flag, IMU_Coeff, controlEffort_IMU, stopTime, no_turn_time, file_name
+    global stateNumber, speed, control_effort_IR, control_effort_heading, bearing, flag, IMU_Coeff, controlEffort_IMU, stopTime, no_turn_time, file_name, write_time
     queue = deque([0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0])
     stateChangeTime = time.time()
     rate = rospy.Rate(300)
     no_turn_time = 4.5
     file_name = str(stateChangeTime) + ".txt"
-    f = open(file_name,"w")
+    f = open(file_name, "w")
+    write_time = time.time()
     while not rospy.is_shutdown():
         print "State: " + str(stateNumber)
         print "IR: Effort: " + str(control_effort_IR)
@@ -105,11 +106,13 @@ def worker():
             ir_output_right = int(1.0/right*10e5)
         f.write("Front: " +str(ir_output_front) + "\n")
         f.write("Right: " +str(ir_output_right) + "\n")
+        f.write("StateNo.: " +srt(stateNumber) + "\n")
+        f.write("Time: " + write_time  + "\n")
+        f.write("----------------------------")
         print "IR Front: " + str(ir_output_front)
         print "IR Right: " + str(ir_output_right)
         print time.time() - stateChangeTime
         print "-----------------------------"
-        f.write("------------------------")
         queue.append(ir_output_front)
 
         for x in queue:
