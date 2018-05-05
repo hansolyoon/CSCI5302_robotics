@@ -84,9 +84,9 @@ def worker():
     queue = deque([0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0])
     stateChangeTime = time.time()
     rate = rospy.Rate(300)
-    no_turn_time = 8
+    no_turn_time = 4.5
     file_name = "./" + str(stateChangeTime) + ".txt"
-    f = open(file_name, "w")
+    f = open("testtestest.txt", "w")
     write_time = str(time.time())
     while not rospy.is_shutdown():
         print "State: " + str(stateNumber)
@@ -114,12 +114,15 @@ def worker():
         print time.time() - stateChangeTime
         print "-----------------------------"
         queue.append(ir_output_front)
-        if time.time() - stateChangeTime > no_turn_time:
-            flag = True
+
         for x in queue:
             if x > 5000:
                 flag = False
+            else:
+               	speed = speed - 100
         queue.popleft()
+        if time.time() - stateChangeTime > no_turn_time:
+           flag = True
         if ir_output_right > 3300 and ir_output_right < 5000 and flag and stateNumber < 3:
             print "####################State Change#############################"
             servo.setTarget(0, 7200)
@@ -138,13 +141,13 @@ def worker():
             stopTime = 2.5
         if stateNumber == 2:
             heading = 202
-            speed = 6350
-            setPoint = 2400
-            stopTime = 3
-            no_turn_time = 6
+            speed = 3600
+            setPoint63 2400
+            stopTime = 2
+            no_turn_time = 5
         if stateNumber == 3:
             heading = 155;
-            speed = 6350
+            speed = 3550
             setPoint = 2400
         if stateNumber == 4:
             rospy.signal_shutdown("Incorrect State Number")
