@@ -41,6 +41,8 @@ global IMU_Coeff
 IMU_Coeff = 500
 global stopTime
 stopTime = 2.5
+global fastTime
+fastTime = 3
 
 # setup function
 def setup():
@@ -51,7 +53,7 @@ def setup():
     servo.setTarget(0, CENTER_VALUE)
     # motor
     servo.setSpeed(1, 0)
-    servo.setAccel(1, 180)
+    servo.setAccel(1, 150)
     servo.setRange(1, 4000, 8000)
     servo.setTarget(0, 6000)
     # initilize node
@@ -80,11 +82,11 @@ def callback4(data):
     controlEffort_IMU = -int(data.angular_velocity.z*IMU_Coeff)
 
 def worker():
-    global stateNumber, speed, control_effort_IR, control_effort_heading, bearing, flag, IMU_Coeff, controlEffort_IMU, stopTime, no_turn_time, file_name, write_time
+    global stateNumber, speed, control_effort_IR, control_effort_heading, bearing, flag, IMU_Coeff, controlEffort_IMU, stopTime, no_turn_time, file_name, write_time, fastTime
     queue = deque([0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0])
     stateChangeTime = time.time()
-    rate = rospy.Rate(300)
-    no_turn_time = 8
+    rate = rospy.Rate(400)
+    no_turn_time = 6
     file_name = "./" + str(stateChangeTime) + ".txt"
     f = open(file_name, "w")
     write_time = str(time.time())
@@ -124,27 +126,28 @@ def worker():
             print "####################State Change#############################"
             servo.setTarget(0, 7200)
             rospy.Rate(300).sleep()
-            servo.setTarget(1,3200)
+            servo.setTarget(1,4500)
             rospy.Rate(stopTime).sleep()
-            servo.setTarget(1,6000)
-            rospy.Rate(200).sleep()
             stateNumber = stateNumber + 1
             stateChangeTime = time.time()
             flag = False
         if stateNumber == 1:
             heading = 260
-            speed = 6350
-            setPoint = 2400
-            stopTime = 2.5
+            speed = 6250
+            setPoint = 2350
+            stopTime = 3
+            fastTime = 4.5
         if stateNumber == 2:
             heading = 202
-            speed = 6350
+            speed = 6250
             setPoint = 2400
-            stopTime = 3
-            no_turn_time = 6
+            stopTime = 2
+            fastTime = 5
+            no_turn_time = 8
         if stateNumber == 3:
             heading = 155;
-            speed = 6350
+            speed = 6250
+            fastTime = 5
             setPoint = 2400
         if stateNumber == 4:
             rospy.signal_shutdown("Incorrect State Number")
@@ -153,8 +156,10 @@ def worker():
         pub2.publish(True)
         pub3.publish(setPoint)
         pub4.publish(heading)
+        if time.time() - stateChangeTime < fastTime:
+            speed = speed + 200
         servo.setTarget(0, int(CENTER_VALUE-control_effort_IR*0.75-control_effort_heading+controlEffort_IMU))
-        servo.setTarget(1, int(speed - abs(control_effort_heading)*0.1))
+        servo.setTarget(1, int(speed))
         rate.sleep()
     if rospy.is_shutdown():
         f.close()

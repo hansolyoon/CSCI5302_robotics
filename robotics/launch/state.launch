@@ -46,8 +46,8 @@
       <param name="lower_limit" value="-800" />
       <param name="windup_limit" value="10" />
       <param name="cutoff_frequency" value="20" />
-      <param name="max_loop_frequency" value="100.0" />
-      <param name="min_loop_frequency" value="100.0" />
+      <param name="max_loop_frequency" value="200.0" />
+      <param name="min_loop_frequency" value="200.0" />
       <remap from="control_effort" to="/control_effort_ir" />
     </node>
 ################################ PID Contoller for Heading #################################
@@ -59,8 +59,8 @@
       <param name="lower_limit" value="-2000" />
       <param name="windup_limit" value="10" />
       <param name="cutoff_frequency" value="20" />
-      <param name="max_loop_frequency" value="100.0" />
-      <param name="min_loop_frequency" value="100.0" />
+      <param name="max_loop_frequency" value="200.0" />
+      <param name="min_loop_frequency" value="200.0" />
       <remap from="state" to="/bearing" />
       <remap from="setpoint" to="/setheading" />
       <remap from="control_effort" to="/control_effort_heading" />
