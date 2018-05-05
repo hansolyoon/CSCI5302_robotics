@@ -126,13 +126,14 @@ def worker():
         queue.popleft()
         if ir_output_right > 3300 and ir_output_right < 5000 and flag and stateNumber < 3:
             print "####################State Change#############################"
-            servo.setTarget(0, 7200)
+            servo.setTarget(0, 7400)
             rospy.Rate(300).sleep()
             servo.setTarget(1,4500)
             rospy.Rate(stopTime).sleep()
             stateNumber = stateNumber + 1
             stateChangeTime = time.time()
             flag = False
+            headingCoeff = 0;
         if stateNumber == 1:
             heading = 260
             speed = 6200
@@ -142,9 +143,9 @@ def worker():
             headingCoeff = 0.5
         if stateNumber == 2:
             heading = 202
-            speed = 6200
+            speed = 6180
             setPoint = 2400
-            stopTime = 2.5
+            stopTime = 2.2
             fastTime = 5
             no_turn_time = 8
             headingCoeff = 1
@@ -153,7 +154,7 @@ def worker():
             speed = 6200
             fastTime = 5
             setPoint = 2400
-            headingCoeff = 0.8
+            headingCoeff = 0
         if stateNumber == 4:
             rospy.signal_shutdown("Incorrect State Number")
             break
