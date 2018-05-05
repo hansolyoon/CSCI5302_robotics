@@ -43,6 +43,8 @@ global stopTime
 stopTime = 2.5
 global fastTime
 fastTime = 3
+global headingCoeff
+headingCoeff = 1
 
 # setup function
 def setup():
@@ -133,22 +135,25 @@ def worker():
             flag = False
         if stateNumber == 1:
             heading = 260
-            speed = 6250
+            speed = 6200
             setPoint = 2350
             stopTime = 3
-            fastTime = 4.5
+            fastTime = 4
+            headingCoeff = 0.5
         if stateNumber == 2:
             heading = 202
-            speed = 6250
+            speed = 6200
             setPoint = 2400
-            stopTime = 2
+            stopTime = 2.5
             fastTime = 5
             no_turn_time = 8
+            headingCoeff = 1
         if stateNumber == 3:
             heading = 155;
-            speed = 6250
+            speed = 6200
             fastTime = 5
             setPoint = 2400
+            headingCoeff = 0.8
         if stateNumber == 4:
             rospy.signal_shutdown("Incorrect State Number")
             break
@@ -157,8 +162,8 @@ def worker():
         pub3.publish(setPoint)
         pub4.publish(heading)
         if time.time() - stateChangeTime < fastTime:
-            speed = speed + 200
-        servo.setTarget(0, int(CENTER_VALUE-control_effort_IR*0.75-control_effort_heading+controlEffort_IMU))
+            speed = speed + 250
+        servo.setTarget(0, int(CENTER_VALUE-control_effort_IR*0.75-control_effort_heading*headingCoeff+controlEffort_IMU))
         servo.setTarget(1, int(speed))
         rate.sleep()
     if rospy.is_shutdown():
